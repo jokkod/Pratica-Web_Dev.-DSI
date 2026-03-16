@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1>Praticando Formulários</h1>
+    <br>
     <form action="#" enctype="multipart/form-data">
         <!--Ao usar input type="file" é obrigado adicionar atributo enctype ao form-->
         <label for="nome">Nome:</label>
@@ -17,7 +18,7 @@
             id="nome"
             placeholder="Digite o seu nome:"
             autofocus
-        >
+            ><!----autofocus= Atributo assegura o preenchimento a partir do campo c/ o atributo -->
         <br><br>
         <label for="sobrenome">Sobrenome:</label>
         <input
@@ -50,7 +51,7 @@
                     id="nível"
                     value="iniciante"
                     checked
-                >
+                ><!-- checked = atributo que inicia elemento do campo já marcado -->
                 Iniciante
             </label>
             <label>
@@ -74,7 +75,7 @@
             <br><br>
             <label for="escolaridade">Sua escolaridade:</label>
             <select name="escolaridade" id="escolaridade">
-                <option selected disabled>Selecione</option>
+                <option selected disabled>Selecione</option><!-- select disabled= atributo que disabilita seleção espaço -->
                 <option value="Educação Básica">Educação Básica</option>
                 <option value="Ensino Médio Incompleto">Ensino Médio Incompleto</option>
                 <option value="Ensino Médio Completo">Ensino Médio Completo</option>
@@ -177,3 +178,9 @@
     </form>
 </body>
 </html>
+*Obs: Diferenças evidentes entre types input e select: 
+-radio= marcação única de espaço no campo;
+-option= seleção de espaço c/ scroll no campo;
+-checkbox= seleção múltipla em espaço no campo.
+**Obs: Input ou select dentro do <label></label>= é entendido como elementos conectados;
+       Input ou select fora do <label></label>= torna necessário interligação dos elementos.

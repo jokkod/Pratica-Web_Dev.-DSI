@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Prática Positions</title>
+    <style>
+        .div-pai{
+            border: 3px solid black;
+            width: 400px;
+            height: 400px;
+            position: relative;
+                left: 150px;
+                top: 100px;
+        }
+        .div-filho{
+            border: 3px solid paleturquoise;
+            width: 100%;
+            height: 400px;
+            box-sizing: border-box;
+            position: sticky;
+            left: 0px;
+            top: 405px;
+        }
+        .div-two{
+            border: 3px solid red;
+            width: 98%;
+            height: 50px;
+            position: absolute;
+            top: 0px;
+        }
+        body{
+            height: 1000px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div-pai">
+        <div class="div-filho"></div>
+    </div>
+
+    <div class="div-two">
+    </div>
+</body>
+</html>

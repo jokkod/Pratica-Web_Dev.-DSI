@@ -1,0 +1,31 @@
+header{
+    width: 100%;
+    background-color: var(cor6);
+    padding-top: 40px;
+    padding-top: 15px;
+}
+
+header > .container{
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 px;
+}
+
+nav ul{
+    display: flex;
+    justify-content: flex-end;
+    gap: 33px;
+    list-style: none;  
+}
+
+nav ul a{
+    font-weight: bold;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: var(--cor6);
+}
+
+nav ul a :hover{
+    text-decoration: underline;
+}
+

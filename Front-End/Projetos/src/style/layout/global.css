@@ -8,17 +8,17 @@
 }
 
 :root {
-    --cor1: #eee;
+    --cor1: #fdfdfd;
     --cor2: #555555;
     --cor3: #979696;
     --cor4: #E5E5E6;
     --cor5: #3B7F9D;
-    --cor6: #000;
+    --cor6: #191919;
     --cor7: #7E7E7E;
 }
 
 body {
-    background-color: var(--cor1);
+    background-color: var(--cor6);
 }
 
 .font1{

@@ -29,6 +29,7 @@ main > .container{
     font-weight: 500;
     display: block;
     margin-top: 10px;
+    transition: 3px ease-in-out;
 }
 
 .main-textos span:hover{
@@ -39,11 +40,12 @@ main > .container{
     padding: 12px;
     margin-top: 14px;
     margin-bottom: 48px;
-    font-weight: 500;
     cursor: pointer;
+    font-weight: 500;
+    border-radius: 8px;
     color: var(--cor5);
 }
 
 .main-textos button:hover{
-    color: var(--cor6)
+    color: var(--cor6);
 }

@@ -6,4 +6,7 @@
 @import url('layout/main.css');
 /* Sobre.css */
 @import url('layout/sobre.css');
-
+/* Projetos.css */
+@import url('layout/projetos.css');
+/* Footer.css */
+@import url('layout/footer.css');

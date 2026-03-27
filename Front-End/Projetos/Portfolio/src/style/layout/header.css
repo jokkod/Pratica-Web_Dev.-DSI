@@ -26,9 +26,10 @@ nav ul a{
     text-transform: capitalize;
     text-decoration: none;
     color: var(--cor2);
+    transition: 3s ease-in;
 }
 
-nav ul a :hover{
+nav ul :hover{
     text-decoration: underline;
 }
 

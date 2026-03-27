@@ -1,0 +1,19 @@
+main {
+    width: 100%;
+    height: 53vh;
+    background-image: url('../../assets/imagens/capa.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+
+main > .container{
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+main-textos{
+    margin-top: 65px;
+}

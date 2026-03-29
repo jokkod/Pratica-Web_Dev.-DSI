@@ -16,3 +16,11 @@ main, aside {
     align-items: center;
     padding: 40px;
 }
+
+@media (max-width: 666px) {
+    .layout-container{
+        height: 40rem;
+        min-height: 5rem;
+        padding: 1rem;
+    }
+}

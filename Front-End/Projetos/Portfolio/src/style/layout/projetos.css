@@ -41,9 +41,17 @@ main + section ~ section > .container button {
     padding: 12px;
     border-radius: 8px;
     border: none;
-    cursor: pointer;
+    transition: 0.3s ease-in-out;
 }
 
 main + section ~ section > .container button:hover {
     color: var(--cor5);
+    cursor: pointer;
+}
+/*Responsividade*/
+@media (max-width: 850px) {
+    main + section ~ section > .container {
+        text-align: center;
+        align-items: center;
+    }
 }

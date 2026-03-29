@@ -26,10 +26,17 @@ nav ul a{
     text-transform: capitalize;
     text-decoration: none;
     color: var(--cor2);
-    transition: 3s ease-in;
+    transition: 0.3s ease-in-out;
 }
 
 nav ul :hover{
     text-decoration: underline;
 }
-
+/*Responsividade*/
+@media (max-width: 850px) and (min-width: 344px){
+    nav ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

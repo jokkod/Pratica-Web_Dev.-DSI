@@ -26,3 +26,14 @@ main + section > .container{
 .left-conteudo p{
     line-height: 25px;
 }
+/*Responsividade*/
+@media (max-width: 850px) {
+    main + section > .container{
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .left-conteudo p {
+        text-align: justify;
+    }
+}

@@ -29,7 +29,7 @@ main > .container{
     font-weight: 500;
     display: block;
     margin-top: 10px;
-    transition: 3px ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 
 .main-textos span:hover{
@@ -40,12 +40,28 @@ main > .container{
     padding: 12px;
     margin-top: 14px;
     margin-bottom: 48px;
-    cursor: pointer;
     font-weight: 500;
     border-radius: 8px;
     color: var(--cor5);
 }
 
 .main-textos button:hover{
+    cursor: pointer;
     color: var(--cor6);
+}
+/*Responsividade*/
+@media (max-width: 845px){
+    main{
+        height: 60vh;
+        display: flex;
+        justify-content: center;
+    }
+    .main-textos{
+        margin-top: 50px;
+    }
+    .main-textos button {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }

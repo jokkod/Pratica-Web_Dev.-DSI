@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid-Layout</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: darkgray;
+        }
+        .grid-container{
+            background-color: darkgray;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr 1fr;
+            gap: 15px;
+        }
+
+        .item{
+            background-color: lightblue;
+            height: 50vh;
+            border: 3px solid darkgray;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="item">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nisi illo architecto debitis maxime veniam eveniet, quam, quia ullam doloremque commodi sunt non. Perferendis nemo cupiditate eaque sunt dolorem unde?</p>
+    </div>
+        <div class="item">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nisi illo architecto debitis maxime veniam eveniet, quam, quia ullam doloremque commodi sunt non. Perferendis nemo cupiditate eaque sunt dolorem unde?</p>
+        </div>
+        <div class="item">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nisi illo architecto debitis maxime veniam eveniet, quam, quia ullam doloremque commodi sunt non. Perferendis nemo cupiditate eaque sunt dolorem unde?</p>
+        </div>
+        <div class="item">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nisi illo architecto debitis maxime veniam eveniet, quam, quia ullam doloremque commodi sunt non. Perferendis nemo cupiditate eaque sunt dolorem unde?</p>
+        </div>
+        <div class="item">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nisi illo architecto debitis maxime veniam eveniet, quam, quia ullam doloremque commodi sunt non. Perferendis nemo cupiditate eaque sunt dolorem unde?</p>
+        </div>
+        <div class="item">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nisi illo architecto debitis maxime veniam eveniet, quam, quia ullam doloremque commodi sunt non. Perferendis nemo cupiditate eaque sunt dolorem unde?</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+main{
+    width: 100%;
+    display: grid;
+    padding-top: 25px;
+    padding-left: 60px;
+    padding-bottom: 25px;
+}
+
+
+.container span{
+    text-transform: uppercase;
+}
+
+.container h1{
+    font-weight: 500;
+}

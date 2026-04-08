@@ -3,7 +3,6 @@ main{
     display: grid;
     padding-top: 25px;
     padding-left: 60px;
-    padding-bottom: 20 0px;
 }
 
 .container{
@@ -21,14 +20,14 @@ main{
 }
 
 .container > .building-img{
-    width: 100%;
+    width: 585px;
     height: 100%;
     object-fit: cover;
 
     grid-column: 2/4;
     grid-row: 1/4;
     margin-left: 120px;
-    margin-right: 60px;
+    margin-right: 100px;
 
 }
 

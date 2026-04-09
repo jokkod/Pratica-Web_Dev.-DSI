@@ -1,6 +1,6 @@
 #certifications {
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     padding: 90px 0 0 100px;
     display: grid;
     grid-template-columns: 1fr  1.5fr;
@@ -60,5 +60,5 @@
     width: calc(100% - 80px);
     height: 100%;
     object-fit: cover;
-    padding: 80px;
+    padding: 50px;
 }

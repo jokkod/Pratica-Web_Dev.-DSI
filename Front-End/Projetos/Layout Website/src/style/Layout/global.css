@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-:root{
+:root {
     --cor1: #ffffff;
     --cor2: #f2f2f2;
     --cor3: #bdbdbd;
@@ -14,14 +14,14 @@
     --cor6: #fafafa;
 }
 
-body{
+body {
     background-color: var(--cor1);
     font-family: 'Roboto', sans-serif;
-    margin-right: 120px;
-    margin-left: 120px;
+    margin-right: 100px;
+    margin-left: 100px;
 }
 
-.ultra-text{
+.ultra-text {
     font-size: 200px;
     font-weight: 900;
 }
@@ -33,7 +33,7 @@ body{
     font-size: 22px;
     font-weight: normal;
 }
-.normal-text{
+.normal-text {
     font-size: 12px;
     font-weight: 200;
 }
@@ -41,7 +41,7 @@ body{
     font-size: 16px;
     font-weight: bold;
 }
-.smaller-text{
+.smaller-text {
     font-size: 14px;
     font-weight: lighter;
 }

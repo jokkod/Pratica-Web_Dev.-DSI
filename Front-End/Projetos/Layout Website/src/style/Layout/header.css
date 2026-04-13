@@ -1,4 +1,4 @@
-header{
+header {
     width: 100%; 
     max-width: 1300px;
     background-color: var(--cor1);
@@ -9,12 +9,12 @@ header{
     padding-bottom: 15px;
 }
 
-header img{
-    width: 90px;
+header img {
+    width: 85px;
     padding-left: 30px;
 }
 
-nav ul{
+nav ul {
     display: flex;
     padding-top: 10px;
     gap: 33px;
@@ -23,7 +23,8 @@ nav ul{
     text-align: center;
 }
 
-nav ul a{
+nav ul a {
     text-decoration: none;
+    color: var(--cor4);
     text-transform: uppercase;
 }

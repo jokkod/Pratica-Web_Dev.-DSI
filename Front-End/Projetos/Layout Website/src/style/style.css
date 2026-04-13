@@ -4,13 +4,13 @@
 @import url('Layout/header.css');
 /* Main.css */
 @import url('Layout/main.css');
-/* About.css */
-@import url('Layout/about.css');
+/* Gallery.css */
+@import url('Layout/gallery.css');
 /* Focus-Mission.css */
 @import url('Layout/focus-mission.css');
 /* Projects.css */
 @import url('Layout/projects.css');
-/* Form.css */
-@import url('Layout/form.css');
-/* Layout.css */
-@import url('Layout/footer.css');
+/* Certifications.css */
+@import url('Layout/certifications.css');
+/* Contact.css */
+@import url('Layout/contact.css');

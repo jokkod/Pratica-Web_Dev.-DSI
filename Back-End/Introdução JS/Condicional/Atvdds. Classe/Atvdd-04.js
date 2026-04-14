@@ -20,7 +20,7 @@ let escolhaPerson = +prompt(`
             alert(`Tigreal é o principal guardião do reino celestial!`)
             break;
         case 4:
-            alert(`Valiir é o imbatível mestre do fogo!`)
+            alert(`Valir é o imbatível mestre do fogo!`)
             break;
         case 5:
             alert(`Hayabusa é o ágil ninja dominador das sombras!`)

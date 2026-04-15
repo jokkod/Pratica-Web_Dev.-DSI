@@ -39,7 +39,7 @@ for (let i = 1; i <= 5; i++) {
     }
 }
 alert(`
-    Valor Total da Compra: ${valorTotal}
+    Valor Total da Compra: ${valorTotal.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})}
     Quantidade de Produtos Acima de R$100: ${prodValorSup}
     Valor do Produto Mais Caro: ${nmProdMaisCaro}
     `)

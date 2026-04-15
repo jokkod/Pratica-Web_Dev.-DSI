@@ -13,6 +13,7 @@ o	Produto mais caro */
 
 let nmProduto = "";
 let valorProduto = 0;
+let quantCompras = 0;
 let quantProduto = 1;
 let valorTotal = 0;
 let prodValorSup = 0;
@@ -22,7 +23,9 @@ let nmProdMaisCaro = "";
 alert(`Sistema de Carrinho de Compras
         Informe as informações de seu carrinho de compras
     `)
-for (let i = 1; i <= 5; i++) {
+
+quantCompras = +prompt(`Digite quantos produtos pretende comprar:`)
+for (let i = 1; i <= quantCompras; i++) {
     nmProduto = prompt(`Digite o nome do ${i}º produto:`);
 
     valorProduto = +prompt(`Digite o valor do ${i}º produto:`);
@@ -39,7 +42,8 @@ for (let i = 1; i <= 5; i++) {
     }
 }
 alert(`
+    Quantidade de Produtos Comprados: ${quantCompras} produtos
     Valor Total da Compra: ${valorTotal.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})}
-    Quantidade de Produtos Acima de R$100: ${prodValorSup}
-    Valor do Produto Mais Caro: ${nmProdMaisCaro}
+    Quantidade de Produtos Acima de R$100: ${prodValorSup} produtos
+    Produto Mais Caro: ${nmProdMaisCaro} (${valorMaisCaro.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})})
     `)

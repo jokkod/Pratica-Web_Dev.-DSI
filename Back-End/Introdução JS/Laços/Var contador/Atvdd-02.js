@@ -15,7 +15,7 @@ let mediaPontos = 0
 let fasesPntsSup = 0
 
 alert(`Bem vindo ao sistema de numeração final de fases!`)
-numFases = +prompt(`Digite a quantidade de fases concluídas`);
+numFases = +prompt(`Digite a quantidade de fases concluídas:`);
 for (let i = 1; i <= 5; i++) {
     pntsFases = +prompt(`Digite os pontos obtidos na ${i}ª fase: `)
     pontuaçãoTotal += pntsFases;

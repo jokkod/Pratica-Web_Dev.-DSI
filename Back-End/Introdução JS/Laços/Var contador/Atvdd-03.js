@@ -20,9 +20,9 @@ let valorMaisCaro = 0;
 let nmProdMaisCaro = "";
 
 alert(`Sistema de Carrinho de Compras
-        Informe as informações de seu carrinho de compras:
+        Informe as informações de seu carrinho de compras
     `)
-for (let i = 1; i <= 3; i++) {
+for (let i = 1; i <= 5; i++) {
     nmProduto = prompt(`Digite o nome do ${i}º produto:`);
 
     valorProduto = +prompt(`Digite o valor do ${i}º produto:`);

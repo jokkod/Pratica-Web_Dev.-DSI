@@ -21,7 +21,7 @@ switch(categConsumidor){
         let DescAplicado1 = (ValorCompra * 0.1);
         let DescFinal1 = (ValorCompra - DescAplicado1);
         alert(`O preço final de sua conta com desconto aplicado é: 
-                R$ ${DescFinal1}`)
+                R$ ${DescFinal1}`);
         break;
 
     case 3:
@@ -31,5 +31,6 @@ switch(categConsumidor){
                 R$ ${DescFinal2}`);
         break;
     default:
-        alert(`Insira um número válido entre os valores disponíveis.`)
+        alert(`Insira um número válido entre os valores disponíveis.`);
+        break;
 }

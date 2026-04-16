@@ -17,11 +17,10 @@ do {
         alert(`
             ----- Resultado do Registro de Aluno -----\n
             REGISTRO REALIZADO COM SUCESSO!
-            Aluno: ${notasAluno}
+            Aluno: ${nomeAluno}
             Nota Final: ${notaAluno}
             `);
-        break;
-    }else{
+    } else {
         alert(`
             ----- Resultado do Registro de Aluno -----\n
             REGISTRO INVÁLIDO! Digite uma nota entre 0 e 10.

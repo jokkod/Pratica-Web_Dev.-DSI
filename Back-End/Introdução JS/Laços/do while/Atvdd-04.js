@@ -13,7 +13,7 @@ do {
         Digite a nota do Aluno:
         `);
 
-    if (!isNaN(NotasAluno) || NotasAluno <= 10 || parseInt(NotasAluno) >= 0) {
+    if (!isNaN(notaAluno) && notaAluno && parseInt(notaAluno) >= 0 && parseInt(notaAluno) <= 0 && nomeAluno ) {
         alert(`
             ----- Resultado do Registro de Aluno -----\n
             REGISTRO REALIZADO COM SUCESSO!
@@ -26,4 +26,4 @@ do {
             REGISTRO INVÁLIDO! Digite uma nota entre 0 e 10.
             `);
     }
-} while (NotasAluno != 10);
+} while (notaAluno >= 0 && notaAluno <= 10);

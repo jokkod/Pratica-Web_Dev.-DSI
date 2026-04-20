@@ -1,11 +1,12 @@
 let idadeAdequada;
 let nomeCandidato;
-alert(`
+
+do {
+    alert(`
     --- BEM VINDO AO PROGRAMA DE AGENDAMENTO* ---\n
     *Agendamento para a prova de habilitação
     Preencha os Campos Adequadamente para Participar da Prova.
     `);
-do {
     nomeCandidato = prompt(`
         Digite seu nome completo:
         `)

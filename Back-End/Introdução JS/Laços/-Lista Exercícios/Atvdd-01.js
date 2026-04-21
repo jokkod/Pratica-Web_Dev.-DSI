@@ -51,7 +51,7 @@ do {
         }
     }
 
-        let mensagemFinal = numPar !== "" ? numPar + "." : "Nenhum";
+        let mensagemFinal = numPar !== "" ? numPar + "." : "Nenhum" + ".";
 alert(`
             --- RESULTADO DA ANÁLISE ---\n
             Análise Realizada com Sucesso!

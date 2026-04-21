@@ -5,7 +5,7 @@ alert(`
     --- Bem vindo ao Centro de Cadastro de Senha ---
     `);
 
-while (senhaDigitada !== null) {
+while (senhaDigitada !== null || senhaDigitada.trim() !== "") {
     senhaDigitada = prompt(`
     Digite sua senha (com no mínimo 8 dígitos):  
     `);

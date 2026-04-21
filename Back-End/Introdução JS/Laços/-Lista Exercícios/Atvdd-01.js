@@ -12,7 +12,7 @@ do {
     quantNum = +prompt(`
         Digite quantos números deseja verificar a paridade:
     `);
-    if (quantNum <= 0 || isNaN(quantNum)) {
+    if (quantNum || quantNum <= 0 || isNaN(quantNum)) {
         if (quantNum !== 0) alert(`
             ----- FALHA DE ANÁLISE -----\n
             Digite números válidos para análise de paridade.

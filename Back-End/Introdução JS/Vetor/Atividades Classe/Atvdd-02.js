@@ -2,33 +2,38 @@ let modelosCarros = ["Uno", "HB20", "Argo", "Fit", "Onix"];
 let passo = 1;
 let qtddRetirada = 0;
 
-while(true){
-        if(passo == 1){
-            let entrada = prompt(`--- Catálogo de Carros ---\n
-                Estoque Atual:`+ modelosCarros.join("\n") + 
-                `\n\nPasso 1- Digite quantos itens que deseja retirar:`
-            );
-            qtddRetirada = parseInt(entrada);
-            if (isNaN(qtddRetirada) || qtddRetirada <= 0 || qtddRetirada > modelosCarros.length) {
-            alert(`--- ERRO:\nDigite um número válido (entre 1 e " + estoque.length + ").`);
+while (true) {
+    if (passo == 1) {
+        let entrada = prompt(`--- Catálogo de Carros ---\nEstoque Atual:\n` + modelosCarros.join("\n") +
+            `\n\nPasso 1- Digite quantos itens deseja retirar:`
+        );
+        qtddRetirada = parseInt(entrada);
+        if (isNaN(qtddRetirada) || qtddRetirada <= 0 || qtddRetirada > modelosCarros.length) {
+            alert(`--- ERRO:\nDigite um número válido (entre 1 e ${modelosCarros.length}).`);
             continue;
-            }
-            passo = 2;
         }
+        passo = 2;
+    }
+    /* Erro: no 1º if que impede seguimento do sistema -> RESOLVIDO
+    Resolução: 
+    */
 
-        if (passo == 2) {
-            let erro = false;
-            let modelosCarrosCp1 = ["Uno", "HB20", "Argo", "Fit", "Onix"];
+    if (passo == 2) {
+        let erro = false;
+        let modelosCarrosCp1 = ["Uno", "HB20", "Argo", "Fit", "Onix"];
 
-            for(i == 1; i <= qtddRetirada; i= i + 1){
-            let ItmRetirar = prompt(`Passo 2- Digite o nome do` + i + `º item a ser retirado:`);
+        for (let i = 1; i <= qtddRetirada; i++) {
+            let ItmRetirar = prompt(`Passo 2- Digite o nome do ` + i + `º item a ser retirado:`);
             let atualizacao = modelosCarros.indexOf(ItmRetirar);
 
-            if(atualizacao !== -1) {
+            if (atualizacao !== -1) {
                 modelosCarros.splice(atualizacao, 1);
-                alert(`Item(ns):` + ItmRetirar + `removido(s).`);
+                alert(`Item(ns): ${ItmRetirar} removido(s).`);
+                /* Erro: Código está encerrando aqui e não está prosseguindo próx passo. -> RESOLVIDO 
+                Resolução: 
+                */
             } else {
-                alert("--- ERRO: Item '" + ItmRetirar + "' não encontrado!");
+                alert(`--- ERRO: Item não encontrado!`);
                 modelosCarros = ["Uno", "HB20", "Argo", "Fit", "Onix"];
                 erro = true;
                 break;
@@ -41,10 +46,35 @@ while(true){
         }
         passo = 3;
     }
-    /* Fazer próx if(passo == 3){} com for incluso contando até 3 e outros if de validação: 
-    1º para verificar erro; e fora dele método push; e 2º para fazer retorno ao passo 1; 
-    e break while fora do if com alerts finais fora do while. */
+    if (passo == 3) {
+        let falha = false;
+        let modelosCarrosCp2 = ["Uno", "HB20", "Argo", "Fit", "Onix"];
+
+        for (let j = 1; j <= 3; j++) {
+            let modeloAdd = prompt(`Passo Final- Adicione o ${j}º de 3 carros de sua preferência:`);
+            /* Erro: Prompt se repete incessantemente. -> RESOLVIDO*/
+            let atualizacao2 = modelosCarros.indexOf(modeloAdd);
+
+            if (modeloAdd === null || modeloAdd.trim() === "") {
+                alert(`--- ERRO: Digite nomes válidos para adição ao catálogo.`);
+                falha = true;
+                break;
+            }
+            modelosCarros.push(modeloAdd.trim());
+
+            if (falha) {
+                passo = 1;
+                continue;
+            } else {
+                passo = 4;
+                alert(`PROCESSO FINALIZADO\n--- Catálogo Final ---\nCarros Disponíveis:\n${modelosCarros.join("\n")}`);
+            }
+        }
+    }
 }
+/* Alerta Decorrente Cód Antigo: Não Usar While após While sem aninhá-los! Dá erro por *Efeito Espaguete.
+*Bloqueio incessante de While pois houve "despedaçamento" do código em fios separados que se interrompem.
+*/
 
 
 

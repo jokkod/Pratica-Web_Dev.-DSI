@@ -8,24 +8,24 @@ let nomepersonA = prompt(`
     Simulador de Combate
     Digite um nome para o personagem atacante:
     `);
-let poderpersonA= parseInt(prompt(`
+let poderpersonA = parseInt(prompt(`
     Digite o nível de poder de ataque do personagem atacante:
     `));
-let nomepersonB= prompt(`
+let nomepersonB = prompt(`
     Fase de Combate
     Digite o nome do personagem defensor:
     `);
-let vidapersonB= parseInt(prompt(`
+let vidapersonB = parseInt(prompt(`
     Defina os pontos de vida do personagem defensor:
     `))
-let escudopersonB= prompt(`
+let escudopersonB = prompt(`
     Decida se o personagem defensor possui escudo ou não, digitando:
     'sim' ou 'não'
     `)
 
-if (poderpersonA > vidapersonB && (escudopersonB == 'Não' || escudopersonB == 'NÃO' ||escudopersonB == 'não' || escudopersonB == 'nao' || escudopersonB == 'NAO')) {
+if (poderpersonA > vidapersonB && (escudopersonB == 'Não' || escudopersonB == 'NÃO' || escudopersonB == 'não' || escudopersonB == 'nao' || escudopersonB == 'NAO')) {
     let danocausado1 = (poderpersonA - vidapersonB);
-    let pontosvida1 = (vidapersonB - danocausado1); 
+    let pontosvida1 = (vidapersonB - danocausado1);
     prompt(`
         Resultado do Combate:
         Personagem atacante: ${nomepersonA} com ${poderpersonA} de poder pessoal
@@ -33,16 +33,16 @@ if (poderpersonA > vidapersonB && (escudopersonB == 'Não' || escudopersonB == '
         Personagem defensor: ${nomepersonB} possui agora ${pontosvida1} pontos de vida.
 
         `)
-}else if (poderpersonA > vidapersonB && (escudopersonB == 'Sim' || escudopersonB == 'SIM' || escudopersonB == 'sim')) {
-    let danocausado2 =  (poderpersonA - vidapersonB)/ 2;
-    let pontosvida2 = (vidapersonB - danocausado2); 
+} else if (poderpersonA > vidapersonB && (escudopersonB == 'Sim' || escudopersonB == 'SIM' || escudopersonB == 'sim')) {
+    let danocausado2 = (poderpersonA - vidapersonB) / 2;
+    let pontosvida2 = (vidapersonB - danocausado2);
     prompt(`
         Resultado do Combate:
         Personagem atacante: ${nomepersonA} com ${poderpersonA} de poder pessoal
         Causou ${danocausado2} pontos de dano;
         Personagem defensor: ${nomepersonB} possui agora ${pontosvida2} pontos de vida.
         `)
-}else{
+} else {
     let danocausado3 = 0;
     let pontosvida3 = vidapersonB;
     alert(`

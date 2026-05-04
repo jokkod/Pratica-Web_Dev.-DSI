@@ -1,121 +1,192 @@
 function calcTriang() {
-  alert(`
+    let altura1 = "";
+    let base1 = "";
+    alert(`
         --- Inicializando Cálculo de Área de Triângulo ---\n
         Digite, a seguir, informações necessárias para Cálculo.
         `);
-  let base1 = Number(
-    prompt(`
+    while (altura1 !== 0 && altura1 !== null && base1 !== 0 && base1 !== null) {
+        let base1 = Number(
+            prompt(`
         Digite um valor para a medida da base:
         `),
-  );
-  let altura1 = Number(
-    prompt(`
+        );
+        let altura1 = Number(
+            prompt(`
         Digite um valor para a medida da altura:
         `),
-  );
+        );
 
-  let calc1 = (base1 * altura1) / 2;
-  alert(`
+        if (base1 === null || altura1 === null || base1 === "" || altura1 === "") break;
+
+        if (base1 > 0 && altura1 > 0) {
+            let calc1 = (base1 * altura1) / 2;
+            alert(`
         RESULTADO DA OPERAÇÃO:
         ${calc1.toFixed(2)}
         `);
+            break;
+        } else {
+            alert(`
+                ----- ERRO -----\n
+                Digite valores de medida válidas!
+                `);
+        }
+    }
 }
 
 function calcRet() {
-  alert(`
+    let altura2 = "";
+    let base2 = "";
+    alert(`
         --- Inicializando Cálculo de Área de Retângulo ---\n
         Digite, a seguir, informações necessárias para Cálculo.
         `);
-  let base2 = Number(
-    prompt(`
+
+    while (base2 !== 0 && base2 !== null && altura2 !== 0 && altura2 !== null) {
+        let base2 = Number(
+            prompt(`
         Digite um valor para a medida da base:
         `),
-  );
-  let altura2 = Number(
-    prompt(`
+        );
+        let altura2 = Number(
+            prompt(`
         Digite um valor para a medida da altura:
         `),
-  );
+        );
 
-  let calc2 = base2 * altura2;
+        if (base2 === null || altura2 === null || base2 === "" || altura2 === "") break;
 
-  alert(`
+        if (base2 > 0 && altura2 > 0) {
+            let calc2 = base2 * altura2;
+
+            alert(`
         RESULTADO DA OPERAÇÃO:
         ${calc2}
         `);
+            break;
+        } else {
+            alert(`
+                ----- ERRO -----\n
+                Digite valores de medida válidas!
+                `);
+        }
+    }
 }
 
 function calcQuadr() {
-  alert(`
+    let lado = "";
+    alert(`
         --- Inicializando Cálculo de Área de Quadrado ---\n
         Digite, a seguir, informações necessárias para Cálculo.
         `);
-  let lado = Number(
-    prompt(`
+    while (lado !== 0 && lado !== null) {
+        let lado = Number(
+            prompt(`
         Digite um valor para a medida do lado:
         `),
-  );
+        );
 
-  let calc3 = lado * lado;
+        if (lado === null || lado === "") break;
 
-  alert(`
+        if (lado > 0) {
+            let calc3 = lado * lado;
+
+            alert(`
         RESULTADO DA OPERAÇÃO:
         ${calc3}
         `);
+            break;
+        } else {
+            alert(`
+                ----- ERRO -----\n
+                Digite um valor de medida válida!
+                `);
+        }
+    }
 }
 
 function calcTrap() {
-  alert(`
+    let baseM = ""
+    let basem = ""
+    let altura3 = ""
+    alert(`
         --- Inicializando Cálculo de Área de Trapézio ---\n
         Digite, a seguir, informações necessárias para Cálculo.
         `);
 
-  let baseM = Number(
-    prompt(`
+    while (baseM !== 0 || baseM !== null || altura3 !== 0 || altura3 !== null ||
+        basem !== 0 || basem !== null) {
+        let baseM = Number(
+            prompt(`
         Digite um valor para a medida da base maior:
         `),
-  );
-  let basem = Number(
-    prompt(`
+        );
+        let basem = Number(
+            prompt(`
         Digite um valor para a medida da base menor:
         `),
-  );
-  let altura3 = Number(
-    prompt(`
+        );
+        let altura3 = Number(
+            prompt(`
         Digite um valor para a medida da altura:
         `),
-  );
+        );
 
-  let calc4 = ((baseM + basem) * altura3) / 2;
+        if (baseM === null || baseM === "" || basem === null || basem === "" || altura3 === null || altura3 === "") break;
 
-  alert(`
+        if ((baseM > 0 || basem > 0) && altura3 > 0) {
+            let calc4 = ((baseM + basem) * altura3) / 2;
+
+            alert(`
         RESULTADO DA OPERAÇÃO:
         ${calc4.toFixed(2)}
-    `);
+        `);
+            break;
+        } else {
+            alert(`
+                ----- ERRO -----\n
+                Digite valores de medida válidas!
+                `);
+        }
+    }
 }
 
 function calcCirc() {
+    let raio = "";
     alert(`
         --- Inicializando Cálculo de Área de Círculo ---\n
         Digite, a seguir, informações necessárias para Cálculo.
         `);
-    
-    let pi = 3.14;
-    let raio = Number(prompt(`
+
+    while (raio !== 0 || raio !== null) {
+        let pi = 3.14;
+        let raio = Number(prompt(`
         Digite um valor para a medida da raio do círculo:
         * Lembrando que o Raio é METADE do diâmetro.
         `));
 
-    let calc5 = pi *(raio * raio);
+        if (raio === null || raio === "") break;
 
-    alert(`
+        if (raio > 0) {
+            let calc5 = pi * (raio * raio);
+
+            alert(`
         RESULTADO DA OPERAÇÃO:
         ${calc5}
         `);
+            break;
+        } else {
+            alert(`
+                ----- ERRO -----\n
+                Digite um valor de medida válida!
+                `);
+        }
+    }
 }
-do{
+do {
 
-let escolhaopcao = Number(prompt(`
+    let escolhaopcao = Number(prompt(`
         Escolha uma das opções que deseja realizar:
         1- Cálculo da Área do Triângulo
         2- Cálculo da Área do Retângulo
@@ -125,21 +196,31 @@ let escolhaopcao = Number(prompt(`
         6- Sair das Opções
         `));
 
-switch(escolhaopcao){
-    case 1:
-        calcTriang()
-    case 2:
-        calcRet() 
-    case 3:
-        calcQuadr()
-    case 4:
-        calcTrap()
-    case 5:
-        calcCirc()
-    case 6:
-        alert(`
+    switch (escolhaopcao) {
+        case 1:
+            calcTriang()
+            break;
+        case 2:
+            calcRet()
+            break;
+        case 3:
+            calcQuadr()
+            break;
+        case 4:
+            calcTrap()
+            break;
+        case 5:
+            calcCirc()
+            break;
+        case 6:
+            alert(`
             Saindo...
             `);
-        break;
-}
-}while(escolhaopção !== 6)
+            break;
+        default:
+            if (escolhaopcao !== null && escolhaopcao !== "6") {
+                alert("Opção inválida!");
+            }
+            break;
+    }
+} while (escolhaopção !== "6" && escolhaopcao !== null);

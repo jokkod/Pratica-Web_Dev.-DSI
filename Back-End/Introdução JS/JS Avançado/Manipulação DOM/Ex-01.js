@@ -2,7 +2,6 @@ const id = document.getElementById('titulo');
 function manipulaTitulo() {
     let texto1 = 'Título Central';
     let texto2 = 'Título Indisponível';
-    /* id.innerText = "Titulo Indisponível!" */
 
     if(id.innerText == texto1){
         id.innerText = texto2

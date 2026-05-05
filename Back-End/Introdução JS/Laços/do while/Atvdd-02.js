@@ -11,7 +11,7 @@ do {
         Seja bem vindo ao sistema!
         Informe corretamente suas informações a seguir.
         `);
-        
+
         nomeCliente = prompt(`
                 Informe o nome do cliente:
                 `);

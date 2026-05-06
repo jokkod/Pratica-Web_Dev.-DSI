@@ -1,20 +1,27 @@
 let votos = [0, 0, 0, 0];
+
+let votacao = document.querySelector('.votar');
+let declararResultado = document.querySelector('.result');
+let processReset = document.querySelector('.reset');
+let processSaida = document.querySelector('.sair')
+
+votacao.addEventListener('click', realizarVotos);
 function realizarVotos() {
     alert(`
         --- SISTEMA DE VOTAÇÃO ---\n
-        Digite o número referente ao seu candidato
+        Digite o número referente ao seu candidato.
         `);
 
     while (true) {
-        let entradaVoto = Number(prompt(`
+        let entradaVoto = prompt(`
         Digite seu voto:\n
         0 = Voto em Branco\n
         1 = Candidato A\n
         2 = Candidato B\n
         3 = Candidato C\n
-        `));
+        `);
 
-        if ( entradaVoto === null) {
+        if (entradaVoto.trim() == "") {
             alert(`
                 ----- ERRO -----\n
                 Opção Inválida!Por Favor, Escolha opção de 0 a 3.
@@ -32,12 +39,13 @@ function realizarVotos() {
             continue;
         }
 
-        votos[voto]++
+        votos[opcaoVoto]++
         alert("Voto confirmado com sucesso!");
         break;
     }
 }
 
+declararResultado.addEventListener('click', exibirResult);
 function exibirResult() {
     let totalVotos = votos[0] + votos[1] + votos[2] + votos[3];
 
@@ -50,9 +58,9 @@ function exibirResult() {
     let nomes = ["Branco", "Candidato A", "Candidato B", "Candidato C"];
     let resultado = `---RESUMO DA VOTAÇÃO---\nTotal de Votos Realizados: ${totalVotos}\n\n`
 
-    for (i = 0; i <= votos.length; i++){
+    for (i = 0; i < votos.length; i++){
         let calcPercetual = (votos[i] / totalVotos) * 100;
-        resultado += `Votos por Candidato\n${nomes[i]}: ${votos[i]} votos | (${percentual.toFixed(1)}% dos votos)\n\n`
+        resultado += `Votos por Candidato\n${nomes[i]}: ${votos[i]} votos | (${calcPercetual.toFixed(1)}% dos votos)\n\n`
     }
 
     let CA = votos[1];
@@ -81,6 +89,18 @@ function exibirResult() {
     alert(resultado + `${MnsgVencedor}`)
 }
 
+processReset.addEventListener('click', resetVotação);
 function resetVotação() {
+    for (let i = 0; i < votos.length; i++) {
+        votos[i] = 0;
+    }
+}
 
+processSaida.addEventListener('click', saídaSistema);
+function saídaSistema() {
+    alert(`Sistema Encerrado. Obrigado por votar!`);
+
+    document.querySelector('.votar').disabled = true;
+    document.querySelector('.result').disabled = true;
+    document.querySelector('.reset').disabled = true;
 }

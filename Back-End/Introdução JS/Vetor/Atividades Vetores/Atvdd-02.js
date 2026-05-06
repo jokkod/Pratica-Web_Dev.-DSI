@@ -20,7 +20,6 @@ while (true) {
 
     if (passo == 2) {
         let erro = false;
-        let modelosCarrosCp1 = ["Uno", "HB20", "Argo", "Fit", "Onix"];
 
         for (let i = 1; i <= qtddRetirada; i++) {
             let ItmRetirar = prompt(`Passo 2- Digite o nome do ` + i + `º item a ser retirado:`);
@@ -48,7 +47,6 @@ while (true) {
     }
     if (passo == 3) {
         let falha = false;
-        let modelosCarrosCp2 = ["Uno", "HB20", "Argo", "Fit", "Onix"];
 
         for (let j = 1; j <= 3; j++) {
             let modeloAdd = prompt(`Passo Final- Adicione o ${j}º de 3 carros de sua preferência:`);

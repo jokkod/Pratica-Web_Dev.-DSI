@@ -1,10 +1,10 @@
 let UltmCalculo = null;
 let processCalculo = document.querySelector('.calcLiquido');
 let exibirResumo = document.querySelector('.resumoCalc');
-let processSaida = document.querySelector
+let processSaida = document.querySelector('.sair');
 
-processCalculo.addEventListener('click', processCalculo);
-function processCalculo() {
+processCalculo.addEventListener('click', realizarCalculo);
+function realizarCalculo() {
     alert(`
         --- Sistema de Cálculo de Salário Líquido ---
         `);
@@ -17,14 +17,41 @@ function processCalculo() {
     }
     valorHora = parseFloat(valorHora);
 
-    let horasTrabalho = ""
-    while ( horasTrabalho === "" || isNaN(horasTrabalho) || horasTrabalho <= 0) {
+    let horasTrabalho = "";
+    while (horasTrabalho === "" || isNaN(horasTrabalho) || horasTrabalho <= 0) {
         horasTrabalho = prompt(`
-            Digite o valor da sua hora de trabalho:
+            Digite quantas horas trabalhadas possui:
             `);
         if (horasTrabalho === null) return;
     }
     horasTrabalho = parseFloat(horasTrabalho);
+
+    let descontoVT = "";
+    while (true) {
+        let entradaVT = prompt(`
+            Informe se você possui vale-transporte:
+            `);
+        if (entradaVT === null) return;
+        let r = entradaVT.trim()
+
+        if (r == "s" || r == "sim" || r == "S" || r == "Sim" || r == "SIM") {
+            descontoVT = true
+            break;
+        }
+        if (r == "n" || r == "N" || r == "nao" || r == "não" || r == "Nao" || r == "Não" ||
+            entradaVT == "NAO" || entradaVT == "NÃO") {
+            descontoVT = false
+            break;
+        }
+        alert("Entrada Inválida.");
+    }
+    /* Erro no prompt de entradaVT */
+
+    let bonus = "";
+    if (horasTrabalho > 160) {
+        let horasExtras = horasTrabalho - 160;
+        bonus = horasExtras * (valorHora * 0.05);
+    }
 
     let salarioBruto = valorHora * horasTrabalho;
 
@@ -36,4 +63,51 @@ function processCalculo() {
     } else {
         descontoINSS = salarioBruto * 0.11;
     }
+
+    salarioLiquido = salarioBruto - descontoINSS - descontoVT + bonus
+
+    dadosUltimoCalculo = {
+        bruto: salarioBruto,
+        liquido: salarioLiquido,
+        inss: descontoINSS,
+        vt: valorDescontoVT,
+        bonus: bonus
+    };
+
+    alert(`Cálculo realizado com sucesso!\n Para ver resultado clique em Exibir resumo do cálculo `)
+}
+exibirResumo.addEventListener('click', function () {
+    if (!dadosUltimoCalculo) {
+        alert("Nenhum cálculo foi realizado ainda!");
+        return;
+    }
+    resumoCalc(
+        dadosUltimoCalculo.bruto,
+        dadosUltimoCalculo.liquido,
+        dadosUltimoCalculo.inss,
+        dadosUltimoCalculo.vt,
+        dadosUltimoCalculo.bonus
+    );
+})
+
+function resumoCalc(bruto, liquido, inss, vt, bonus) {
+    alert(`
+            --- Resumo do Cálculo Salarial ---\n\n
+            Salário Bruto: R$ ${bruto.toFixed(2)}\n
+            Desconto do Inss: R$ ${inss.toFixed(2)}\n
+            Desconto Vale-Transporte: R$ ${vt.toFixed(2)}\n
+            Bônus: R$ ${bonus.toFixed(2)}\n
+            ----------------------------------\n
+            Salário Líquido: R$ ${liquido.toFixed(2)}\n
+            `);
+}
+
+processSaida.addEventListener('click', realizarSaida);
+function realizarSaida() {
+    alert(`
+        Sistema Encerrado!
+        `);
+
+    document.querySelector('.calcLiquido').disabled = true;
+    document.querySelector('.resumoCalc').disabled = true;
 }

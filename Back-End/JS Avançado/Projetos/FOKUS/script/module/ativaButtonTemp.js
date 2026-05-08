@@ -1,8 +1,8 @@
+export default function initButtonTemp() {
 const banner = document.querySelector('.app__image');
 const titulos = document.querySelector('.app__title');
 const spanIniciar = document.querySelector('.mnsgStartPause');
 const iconIniciar = document.querySelector('.app__card-primary-butto-icon');
-const iniciarMusica = document.querySelectorAll('.toggle-checkbox');
 const html = document.documentElement; /* Trazendo elemento html fora do body */
 const botoes = document.querySelectorAll('.app__card-button[data-contexto]');
 
@@ -25,34 +25,40 @@ function alterarConteudos(contexto, botaoClicado) {
     // Atualizando o data-contexto
     html.dataset.contexto = contexto;
 
-    banner.src = `imagens/${contexto}.png`
+    banner.src = `imagens/${contexto}.png`;
 
     switch (contexto) {
         case "foco":
+            tempoDecorrido = 25;
+            mostrarTimer();
             titulos.innerHTML = `
             Otimize sua produtividade,<br>
             <strong class="app_title-strong">
                 Faça uma pausa curta!
             </strong>
-            `
+            `;
             break;
 
         case "descanso-curto":
+            tempoDecorrido = 10;
+            mostrarTimer();
             titulos.innerHTML = `
             Otimize sua produtividade,<br>
             <strong class="app_title-strong">
                 Faça uma pausa curta!
             </strong>
-            `
+            `;
             break;
 
         case "descanso-longo":
+            tempoDecorrido = 15;
+            mostrarTimer();
             titulos.innerHTML = `
             Otimize sua produtividade,<br>
             <strong class="app_title-strong">
                 Faça uma pausa longa!
             </strong>
-            `
+            `;
             break;
     }
 }
@@ -61,7 +67,7 @@ function alterarConteudos(contexto, botaoClicado) {
 const exibirTimerApp = document.getElementById('timer');
 const btnStart = document.getElementById('start-pause');
 // Variável de referência para guardar timer
-let tempoDecorrido = 10;
+let tempoDecorrido = 25;
 
 
 function mostrarTimer() {
@@ -72,45 +78,38 @@ function mostrarTimer() {
 }
 mostrarTimer();
 
-function ativarSom() {
-    const somAmbiente = new Audio('sons/luna-rise-part-one.mp3');
-    somAmbiente.loop = true
-
-    iniciarMusica.forEach(checkbox => {
-        checkbox.addEventListener('change', (event) => {
-            if (event.target.checked) {
-                somAmbiente.play();
-            } else {
-                somAmbiente.pause();
-            }
-        });
-    });
-}
-ativarSom();
-
-
-btnStart.addEventListener('click', iniciarTimer);
+btnStart.addEventListener('click', iniciaPausaTimer);
 function decrementarTimer() {
-    const somEncerrar = new Audio('sons/beep.mp3');
-
-    tempoDecorrido -= 1;
+    const som = new Audio('sons/beep.mp3');
 
     if (tempoDecorrido <= 0) {
-        somEncerrar.play();
-        alert(`Tempo Finalizado!`);
-        spanIniciar.textContent = `Começar`;
+        som.play();
+        setTimeout(() =>
+        alert(`Tempo Finalizado!`), 100);
+        spanIniciar.textContent = `Iniciar`;
         pararTimer();
         return;
     }
+    tempoDecorrido -= 1;
     mostrarTimer();
 }
 
 let idTimer
 let rodando = false;
-function iniciarTimer() {
-    spanIniciar.textContent = `Pausar`;
+function iniciaPausaTimer() {
+    const audioIniciar = new Audio('sons/play.wav');
+    const audioPausar = new Audio('sons/pause.mp3');
+    if (rodando) {
+        iconIniciar.src = `imagens/play_arrow.png`
+        spanIniciar.textContent = `Iniciar`;
+        audioPausar.play();
+        pararTimer();
+        return;
+    }
     iconIniciar.src = `imagens/pause.png`;
-    idTimer -= setInterval(decrementarTimer, 1000);
+    spanIniciar.textContent = `Pausar`;
+    audioIniciar.play();
+    idTimer = setInterval(decrementarTimer, 1000);
     rodando = true;
 }
 
@@ -118,4 +117,4 @@ function pararTimer() {
     clearInterval(idTimer);
     rodando = false;
 }
-
+}

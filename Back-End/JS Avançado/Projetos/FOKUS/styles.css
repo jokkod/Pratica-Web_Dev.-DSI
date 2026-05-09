@@ -161,10 +161,22 @@ h1, h2, h3, h4, h5, h6 {
     gap: 1rem;
 }
 
-.app__card-secundary-button-wrapper {
+.app__card-secundary-button {
+    padding: 0.8rem;
+    width: 12rem;
+    color: var(--color-secondary);
+    border: none;
+    cursor: pointer;
+    outline: inherit;
+    border-radius: 3.2rem;
+    background: var(--linear-botes);
+    margin-top: 3.2rem;
+    margin-left: 1.0rem;
+    font-size: 1.8rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 1rem;
 }
 
 .app__footer {

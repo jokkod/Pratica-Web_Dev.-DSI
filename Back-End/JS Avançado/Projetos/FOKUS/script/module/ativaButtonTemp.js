@@ -89,7 +89,6 @@ export default function initButtonTemp() {
             setTimeout(() => {
                 alert(`Tempo Finalizado!`);
                 som.pause();
-                som.currentTime = 0;
 
                 iconIniciar.src = 'imagens/play_arrow.png';
                 spanIniciar.textContent = `Iniciar`;

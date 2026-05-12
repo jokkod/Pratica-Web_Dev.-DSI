@@ -30,7 +30,7 @@ export default function initButtonTemp() {
         somAlterar.play();
         switch (contexto) {
             case "foco":
-                tempoDecorrido = 1500;
+                tempoDecorrido = 15;
                 mostrarTimer();
                 titulos.innerHTML = `
             Otimize sua produtividade,<br>
@@ -68,7 +68,7 @@ export default function initButtonTemp() {
     const exibirTimerApp = document.getElementById('timer');
     const btnStart = document.getElementById('start-pause');
     // Variável de referência para guardar timer
-    let tempoDecorrido = 1500;
+    let tempoDecorrido = 15;
 
 
     function mostrarTimer() {
@@ -99,7 +99,7 @@ export default function initButtonTemp() {
                 } else if (contextoAtual === 'descanso-longo') {
                     tempoDecorrido = 900;
                 } else {
-                    tempoDecorrido = 1500;
+                    tempoDecorrido = 15;
                 }
 
                 mostrarTimer();
@@ -148,7 +148,7 @@ export default function initButtonTemp() {
             const contextoEscolhido = html.dataset.contexto;
             switch (contextoEscolhido) {
                 case "foco":
-                    tempoDecorrido = 1500;
+                    tempoDecorrido = 15;
                     break;
                 case "descanso-curto":
                     tempoDecorrido = 600;

@@ -22,9 +22,13 @@ imgEsconderSenha.addEventListener('click', () => {
 });
 
 btnRegistrar.addEventListener('click', () => {
-    if (inputSenha.value.length > 0 && inputSenha.value.length >= 8) {
-        let mnsg = document.getElementById('mnsgConfirmacao');
+    let mnsg = document.getElementById('mnsgConfirmacao');
+
+    if (inputSenha.validity.valid) {
         mnsg.innerText = `Senha Registrada com Sucesso!`;
         mnsg.style.color = "#80ef80";
+    } else {
+        mnsg.innerText = `Digite uma senha válida!`
+        mnsg.style.color = "red";
     }
 });

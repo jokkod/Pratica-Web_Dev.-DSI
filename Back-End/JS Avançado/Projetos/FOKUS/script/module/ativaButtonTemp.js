@@ -109,6 +109,9 @@ export default function initButtonTemp() {
             return;
         }
         tempoDecorrido -= 1;
+        if (tempoDecorrido -= 1) {
+            resetIniciar.style.display = "flex";
+        }
         mostrarTimer();
     }
 
@@ -158,6 +161,7 @@ export default function initButtonTemp() {
                     break;
             }
             mostrarTimer();
+            resetIniciar.style.display = "none";
             iconIniciar.src = `imagens/play_arrow.png`
             spanIniciar.textContent = `Iniciar`;
         });

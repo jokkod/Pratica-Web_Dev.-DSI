@@ -24,7 +24,7 @@ imgEsconderSenha.addEventListener('click', () => {
 btnRegistrar.addEventListener('click', () => {
     let mnsg = document.getElementById('mnsgConfirmacao');
 
-    if (inputSenha.validity.valid) {
+    if (inputSenha.validity.valid && inputSenha.trim() !== "") {
         mnsg.innerText = `Senha Registrada com Sucesso!`;
         mnsg.style.color = "#80ef80";
     } else {

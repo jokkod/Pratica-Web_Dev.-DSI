@@ -161,7 +161,7 @@ h1, h2, h3, h4, h5, h6 {
     gap: 1rem;
 }
 
-.app__card-secundary-button {
+.app__card-secondary-button {
     padding: 0.8rem;
     width: 12rem;
     color: var(--color-secondary);

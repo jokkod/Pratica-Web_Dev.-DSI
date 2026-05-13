@@ -137,7 +137,7 @@ export default function initButtonTemp() {
         rodando = false;
     }
 
-    const resetIniciar = document.querySelector('.app__card-secundary-button');
+    const resetIniciar = document.querySelector('.app__card-secondary-button');
     function resetarTimer() {
         const somReturn = new Audio('sons/return.mp3');
 

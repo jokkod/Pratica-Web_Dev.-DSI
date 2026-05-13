@@ -6,10 +6,10 @@ input.addEventListener('keydown', (event) => {
     let texto = input.value;
     
     if (tecla === 'Enter') {
-        divConteudo.innerText = `Texto escrito: ${texto} `
-        input.value = ''
+        divConteudo.innerText = `Texto escrito: ${texto}`;
+        input.value = '';
         //ou input.value = null
     } else {
-        divConteudo.innerText = `A tecla apertada foi ${tecla}`
+        divConteudo.innerText = `A tecla apertada foi ${tecla}`;
     }
 });

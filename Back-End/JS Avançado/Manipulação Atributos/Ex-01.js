@@ -1,10 +1,10 @@
-const input = document.querySelector('[type="radio"]');
+const input = document.querySelector('[type="text"]');
 const buttonType = document.getElementById('type');
 
 buttonType.addEventListener('click', () => {
-    if (input) {
-        input.setAttribute('type', 'text');
+    if (input.getAttribute('type') === 'text') {
+        input.setAttribute('type', 'radio');
     } else {
-        document.querySelector(input).removeAttribute("type")
+        input.setAttribute('type', 'text');
     }
-})
+});

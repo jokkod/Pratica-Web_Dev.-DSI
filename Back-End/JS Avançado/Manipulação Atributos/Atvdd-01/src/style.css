@@ -1,0 +1,32 @@
+span {
+    font-weight: 300;
+}
+
+.hide-unhideSenha {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 0.0625rem solid #767676;
+    border-radius: 0.15rem;
+    padding: 0.010rem 0.25rem;
+    width: 18rem;
+    margin-top: 1rem;
+    margin-bottom: 0.30rem;
+    background-color: #ffffff;
+}
+
+.hide-unhideSenha input {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 0.4rem 0;
+    background: transparent;
+}
+
+.input-icon {
+    width: 1.25rem;
+    height: 2.95vh;
+    display: none;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}

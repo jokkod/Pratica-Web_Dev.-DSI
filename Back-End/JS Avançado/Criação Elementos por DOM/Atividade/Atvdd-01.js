@@ -1,7 +1,7 @@
 const body = document.querySelector('body');
 
 const h1 = document.createElement('h1');
-h1.innerText = `Sistema de Escalação`
+h1.innerText = `Sistema de Escalação`;
 
 const txtPosicao = document.createElement('label');
 txtPosicao.innerText = `Informe a posição do jogador a ser escalado:\n`
@@ -11,7 +11,7 @@ inputPosicao.pattern = "^([Gg]oleiro|[Zz]agueiro|[Vv]olante|[Ll]ateral|[Mm]eio-[
 const txtNome = document.createElement('label');
 txtNome.innerText = `\n\nInforme o nome do jogador a ser escalado:\n`;
 const inputNome = document.createElement('input');
-inputNome.pattern = "^[A-Za-zÀ-ÿ ]+$";
+inputNome.pattern = "^[A-Za-zÀ-ÿ]+$";
 
 const txtNumero = document.createElement('label');
 txtNumero.innerText = `\n\nInforme o número do jogador a ser escalado:\n`;

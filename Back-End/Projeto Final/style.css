@@ -29,19 +29,19 @@ body {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    width: 90%;
+    width: 200vw;
     max-width: 62.5rem;
     min-width: 37.5rem;
 }
 
 .right-container {
     display: flex;
-    flex: 1.25;
+    flex: 2;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 0 5rem 0 0;
     margin-top: 3.5rem;
     margin-bottom: 0;
-    padding: 2rem;
+    padding: 2rem 15rem 1rem 0;
     flex-direction: column;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -66,7 +66,7 @@ body {
 }
 
 .web {
-    flex: 1.25;
+    flex: 1;
     min-width: 25rem;
     background-color: var(--cor2);
     margin-top: 3.5rem;
@@ -101,7 +101,7 @@ body {
     margin-bottom: 1.15rem;
 }
 
-.web__inicial-input, #sec-select, #terc-select, .web__section-quint-input, .web__sext-input {
+#web__inicial-input, #sec-select, #terc-select, #web__section-quint-input, #web__sext-input {
     width: 100%;
     padding: 0.5rem;
     border-radius: 5px;

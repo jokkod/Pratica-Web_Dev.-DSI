@@ -173,10 +173,9 @@ body {
     } 
 }
 
-/* Responsividade para Tablets */
-
-@media(max-width: 1024px) {
+ /* Responsividade para Tablets */ 
+@media(max-width: 1030px) and (min-width: 999px) {
     .global-container {
-        font-size: 70rem;
+        font-size: 1.7rem;
     }
-}
+} 

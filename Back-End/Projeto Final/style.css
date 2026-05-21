@@ -51,6 +51,11 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.right__title {
+    padding: 1rem 0rem 1rem 2rem;
+    color: var(--cor3);
+}
+
 .right__ul {
     display: flex;
     flex-direction: column;
@@ -78,7 +83,7 @@ body {
     background-color: var(--cor2);
     margin-top: 3.5rem;
     margin-bottom: 0rem;
-    padding: 2.5rem;
+    padding: 2rem;
 }
 
 .web__header {

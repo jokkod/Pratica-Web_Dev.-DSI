@@ -24,7 +24,7 @@ main {
 
 .container > .building-img {
     display: block;
-    width: 100%;
+    width: 70%;
     height: 100%;
     object-fit: cover;
     grid-column: 2/4;

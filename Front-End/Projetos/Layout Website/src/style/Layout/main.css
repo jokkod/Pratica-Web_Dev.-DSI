@@ -10,7 +10,6 @@ main {
     display: grid;
     grid-template-columns: 1fr minmax(auto, 1.5fr);
     grid-template-rows: repeat(3, 1fr);
-    height: 100vh;
     min-height: 50vh; 
     max-height: 80vh;
 }

@@ -20,13 +20,13 @@ class Product {
     calculateDiscount(calculateDiscount) {
         const valorPercent = Number(calculateDiscount);
         
-        if (!isNaN(valorPercent) && valorPercent >= 0 && valorPercent <= 100) {
+        if (!isNaN(valorPercent) && valorPercent >= 1 && valorPercent <= 100) {
             const discountAmount = this.price * (valorPercent / 100);
             const finalPrice = this.price - discountAmount;
             
             return finalPrice;
         } else {
-            alert(`Digite um valor de desconto válido (0 a 100)!`);
+            alert(`Digite um valor de desconto válido (1 a 100)!`);
             return this.price; 
         }
     }

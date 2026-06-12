@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 28</title>
+</head>
+<body>
+    <h2>Classificação de Terrenos</h2>
+    <h3>Forneça o valor da largura e comprimento do terreno</h3>
+    <label>Largura:</label><br>
+    <input type="number" id="largura" placeholder="">
+    <br><label>Comprimento:</label><br>
+    <input type="number" id="comprimento" placeholder=""><br><br>
+    <button onclick="CalcularArea()">Verificar</button>
+
+    <p id="resultadoarea"></p>
+    <p id="resultadorank"></p>
+
+    <script>
+    function CalcularArea(){
+        const resultadoarea = document.getElementById("resultadoarea");
+        const resultadorank = document.getElementById("resultadorank");
+
+
+        const largura= parseFloat(document.getElementById("largura").value);
+        const comprimento= parseFloat(document.getElementById("comprimento").value);
+        const arealote= largura * comprimento;
+
+        if(arealote === 100){
+            resultadoarea.textContent= 'Seu terreno tem: '+ arealote + 'm².';
+            resultadorank.textContent= 'Seu terreno é um TERRENO POPULAR!';
+        }else if(arealote > 100 && arealote <= 500){
+            resultadoarea.textContent= 'Seu terreno tem: '+ arealote + 'm².';
+            resultadorank.textContent= 'Seu terreno é um TERRENO MASTER!';
+        }else if(arealote > 500){
+            resultadoarea.textContent= 'Seu terreno tem: '+ arealote + 'm².';
+            resultadorank.textContent= 'Seu terreno é um TERRENO VIP!';
+        }
+    }
+    </script>
+</body>
+</html>

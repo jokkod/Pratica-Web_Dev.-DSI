@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 4ª questão</title>
+</head>
+<body>
+    <h1>Cálculo de Média de Notas</h1>
+    <input type="number" id="Valor1" placeholder="Digite um valor:">
+    <input type="number" id="Valor2" placeholder="Digite outro valor:">
+    <button onclick="mostrarMensagem()">Confirmar</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function mostrarMensagem(){
+        const valor1= parseFloat(document.getElementById("Valor1").value); 
+        const valor2= parseFloat(document.getElementById("Valor2").value);
+
+        let soma= valor1+valor2
+
+        const mensagem= `Soma de ${valor1} e ${valor2} é igual a: ${soma}.`;
+        document.getElementById("resultado").innerHTML = mensagem;}
+    </script>
+</body>
+</html>

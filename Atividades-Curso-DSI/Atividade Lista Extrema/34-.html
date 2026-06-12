@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 34</title>
+</head>
+<body>
+    <h2>Verificadora de Índice de Massa Corpórea(IMC)</h2>
+    <label>Digite seu peso:</label><br>
+    <input type="number" id="peso" placeholder=""><br>
+    <label>Digite sua altura:</label><br>
+    <input type="number" id="altura" placeholder=""><br>
+
+    <br><button onclick= "VerificarIMC()">Verificar IMC</button>
+
+    <p id="resultado"></p>
+    <script>
+        function VerificarIMC() {
+            const mensagemfim= document.getElementById("resultado");
+
+            const valorpeso = parseFloat(document.getElementById("peso").value);
+            const h= parseFloat(document.getElementById("altura").value);
+            const imcfinal= valorpeso/(h * h);
+            
+            if(imcfinal < 18.5){
+                mensagemfim.textContent= 'Você está abaixo do peso!';
+            }else if(imcfinal >= 18.5 && imcfinal <= 25){
+                mensagemfim.textContent= 'Você está com peso ideal';
+            }else if(imcfinal > 25 && imcfinal <= 30){
+                mensagemfim.textContent= 'Você está com sobrepeso!';
+            }else if(imcfinal > 30 && imcfinal <= 40){
+                mensagemfim.textContent= 'Você está com obesidade!';
+            }else if(imcfinal > 40){
+                mensagemfim.textContent= 'Você está com obesidade mórbida!';
+            }else{}
+  
+        }
+    </script>
+</body>
+</html>

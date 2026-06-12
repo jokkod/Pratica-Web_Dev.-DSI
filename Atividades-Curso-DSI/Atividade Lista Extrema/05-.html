@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 5ª questão </title>
+</head>
+<body>
+    <h1>Cálculo de Média de Notas</h1>
+    <input type="number" id="Nota1" placeholder="Digite sua 1ª nota:">
+    <input type="number" id="Nota2" placeholder="Digite sua 2ª nota:">
+    <button onclick="mostrarMensagem()">Confirmar</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function mostrarMensagem(){
+        const nota1= parseFloat(document.getElementById("Nota1").value); 
+        const nota2= parseFloat(document.getElementById("Nota2").value);
+
+        let média= (nota1+nota2)/2;
+
+        const mensagem= `Nota 1: ${nota1}<br> Nota 2: ${nota2}<br> Média entre ${nota1} e ${nota2} é igual a: ${média}.`;
+        document.getElementById("resultado").innerHTML = mensagem;}
+    </script>
+</body>
+</html>

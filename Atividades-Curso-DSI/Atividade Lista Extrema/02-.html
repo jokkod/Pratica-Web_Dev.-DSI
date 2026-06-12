@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt~br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 2ª questão</title>
+</head>
+<body>
+    <h1>Site de Teste</h1>
+    <input type="text" id="nmInput" placeholder="Digite seu nome:">
+    <button onclick="mostrarMensagem()">Confirmar</button>
+    
+    <p id="mensagem"></p>
+    
+    <script>
+        function mostrarMensagem(){
+            const nome= document.getElementById("nmInput").value;
+            document.getElementById("mensagem").innerHTML = `Olá, ${nome}, é um prazer te conhecer!`;
+        }
+    </script>
+</body>
+</html>

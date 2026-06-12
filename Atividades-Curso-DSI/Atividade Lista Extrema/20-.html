@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 20</title>
+</head>
+<body>
+    <h1>Indentificador de par ou ímpar</h1>
+    <input type="number" id="numero" placeholder="Digite um número:">
+    <button onclick="VerificarParidade()">Verificar Número</button>
+
+    <p id="MensagemErro"></p>
+    <div id="resposta"></div>
+
+    <script>
+        const Inputvalor= document.getElementById("numero");
+        const MensagemFalha= document.getElementById("MensagemErro");
+
+         numero.addEventListener('input', function(){
+            const valorvalid= Inputvalor.value;
+            const ValorNumerico= Number(valorvalid.replace('.', '.'));
+
+            if(Number.isInteger(ValorNumerico)){
+                MensagemFalha.textContent= ' ';
+            }else{
+                Inputvalor.value= valorvalid.replace(/[.,]]/g, '');
+                MensagemFalha.textContent= '*Digite um número inteiro para possibilitar verificação.';
+            }
+        });
+
+        function VerificarParidade(){
+            const valor= Inputvalor.value;
+            if (valor === '') {
+                MensagemFalha.textContent = '*Digite um número antes de verificar.';
+                document.getElementById("resposta").innerHTML = '';
+             return;
+            }
+
+            if(valor % 2 == 0){
+            const resultado= `O seu número ${valor} é um número par.`;
+                document.getElementById("resposta").innerHTML= resultado;
+            }else{
+                const resultado2= `O seu número ${valor} é um número ímpar.`;
+                document.getElementById("resposta").innerHTML= resultado2;
+            }
+        }
+        </script>
+</body>
+</html>

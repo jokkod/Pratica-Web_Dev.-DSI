@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 26</title>
+</head>
+<body>
+    <h1>Calculadora de Média</h1>
+    <label>Insira abaixo suas duas notas: </label><br>
+    <input type="number" id="primeiranota" placeholder="1ª nota">
+    <input type="number" id="segundanota" placeholder="2ª nota">
+    <button onclick="CalcularMedia()">Calcular</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function CalcularMedia(){
+            var resultadofinal= document.getElementById("resultado")
+
+            const primanota= parseFloat(document.getElementById("primeiranota").value);
+            const secundnota= parseFloat(document.getElementById("segundanota").value);
+            const valorMedia= (primanota+secundnota)/2
+
+            if(valorMedia >= 7.0){
+                resultadofinal.textContent= 'APROVADO!'
+            }else if(valorMedia >= 5.0 && valorMedia <= 6.9){
+                resultadofinal.textContent= 'RECUPERAÇÃO!'
+            }else if(valorMedia <= 4.9){
+                resultadofinal.textContent= 'REPROVADO!'
+            }else{}
+            
+        }
+    </script>
+</body>
+</html>

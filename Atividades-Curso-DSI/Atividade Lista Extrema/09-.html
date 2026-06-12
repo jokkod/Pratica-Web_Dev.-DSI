@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 9</title>
+</head>
+<body>
+    <h2>Convertedor de Real para Dólar</h2>
+    <label>Insira valor, em REAL, que deseja converter logo abaixo: </label><br></br>
+    <label>Insira valor, em REAL, que deseja converter logo abaixo: </label><br>
+    <input type="number" id="valor" placeholder=" ">
+    <button onclick= "RealizarConversão()">Converter</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function RealizarConversão(){
+            const ValorInicial= parseFloat(document.getElementById("valor").value);
+            const ValorDólar= 3.45;
+            const Conversão= ValorInicial * ValorDólar;
+
+
+            const ValorFinal= Conversão.toLocaleString( 'en-US', {
+                style: 'currency',
+                currency: 'USD'
+            });
+            const mensagemresult= document.getElementById("resultado");
+            mensagemresult.textContent= 'Valor em dólar:'+ ValorFinal;
+        }
+        </script>
+        </body>
+</html>

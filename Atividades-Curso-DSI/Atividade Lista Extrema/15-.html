@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 15</title>
+</head>
+<body>
+    <h1>Cálculo de Salário por Dias Trabalhados</h1>
+    <p>Insira seus dias trabalhados abaixo: </p>
+    <input type="number" id="Dias" placeholder="">
+    <button onclick="VerificarSalario()">Verificar Pagamento</button>
+
+    <div id="MnsgPagamento"></div>
+
+    <script>
+        function VerificarSalario(){
+            const DiasTrabalho= parseFloat(document.getElementById("Dias").value);
+            const Horastrabalho= 8;
+            const Valorhora= 25;
+
+            const Expediente= (DiasTrabalho * Horastrabalho);
+            const ValorTotal= (Expediente * Valorhora);
+            const GanhoFormatado= ValorTotal.toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL'
+            });
+
+            const resultado= `Seu salário final é: ${GanhoFormatado}`;
+            document.getElementById("MnsgPagamento").innerHTML= resultado;
+    }
+
+    </script>
+</body>
+</html>

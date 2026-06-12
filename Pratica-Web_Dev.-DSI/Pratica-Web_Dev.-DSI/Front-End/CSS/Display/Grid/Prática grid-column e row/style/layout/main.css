@@ -1,0 +1,31 @@
+main{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100px;
+    margin: 100px auto;
+}
+
+main .left{
+    border: 3px solid blue;
+    display: grid;
+    align-content: center;
+    justify-items: end;
+    padding: 16px 32px;
+}
+
+main .img{
+    border: 3px solid green;
+}
+
+.left p{
+    font-size: 18px;
+    text-align: right;
+}
+
+.left a{
+    background-color: red;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 16px 32px;
+    border-radius: 5px;
+}

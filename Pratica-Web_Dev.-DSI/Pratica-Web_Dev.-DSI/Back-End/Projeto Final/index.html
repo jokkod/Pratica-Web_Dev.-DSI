@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logitech KeyControl</title>
+    <script src="script.js" defer></script>
+    <link rel="shortcut icon" href="./assets/imagens/logiech-icon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="global-container">
+        <main class="web">
+            <header class="web__header">
+                <figure class="web__logo-figure">
+                    <img class="web__logo-img" src="./assets/imagens/Logitech-alt.png">
+                    <img class="web__logo-type-img" src="./assets/imagens/TypeLogo.png">
+                </figure>
+                <h1 class="web__header-title">Cadastro KeyControl</h1>
+                <p class="web__header-text">Para recebimento de uma key, faça o cadastro.<br>Se Tabela de Cadastro das
+                    Chaves estiver lotada, exclua a última chave.</p>
+            </header>
+            <section class="web__section">
+                <div class="web__section-inicial">
+                    <label class="web__inicial-label">Digite o Nome do Responsável:
+                        <input class="web__item" id="web__inicial-input" pattern="^[A-Za-zÀ-ÿ\s]+$" autocomplete="off" autofocus required>
+                    </label>
+                </div>
+                <div class="web__section-sec">
+                    <label class="web__sec-label">Selecione o Setor:</label>
+                    <select name="setor" class="web__item" id="sec-select" required>
+                        <option selected disabled>Selecione</option>
+                        <option value="TI">TI</option>
+                        <option value="RH">RH</option>
+                        <option value="Financeiro">Financeiro</option>
+                        <option value="DBA">DBA</option>
+                        <option value="DevOps">DevOps</option>
+                    </select>
+                </div>
+                <div class="web__section-terc">
+                    <label class="web__terc-label">Selecione a Sala:</label>
+                    <select name="sala" class="web__item" id="terc-select" required>
+                        <option selected disabled>Selecione</option>
+                        <option name="local" value="Lab-01">Lab-01</option>
+                        <option name="local" value="Sala A">Sala A</option>
+                        <option name="local" value="Reuniao A">Reunião A</option>
+                        <option name="local" value="Auditório">Auditório</option>
+                        <option name="local" value="Lab-02">Lab-02</option>
+                    </select>
+                </div>
+                <div class="web__section-quart">
+                    <label class="web__quart-label"> Selecione o Turno:
+                        <input type="radio" name="turno" class="web__item" id="turno-mat" value="manha" required>
+                        Manhã
+                        <input type="radio" name="turno" class="web__item" id="turno-vesp" value="tarde" required>
+                        Tarde
+                        <input type="radio" name="turno" class="web__item" id="turno-not" value="noite" required>
+                        Noite
+                    </label>
+                </div>
+                <div class="web__section-quint">
+                    <label class="web__quint-label">Digite o Horário de Retirada:
+                        <input class="web__item" id="web__section-quint-input" type="time" required>
+                    </label>
+                </div>
+                <div class="web__section-sext">
+                    <label class="web__sext-label">Digite o Horário de Entrega:
+                        <input class="web__item" id="web__sext-input" type="time" required>
+                    </label>
+                </div>
+                <button type="submit" class="btn-primary">CADASTRAR</button>
+                <p class="last-text"></p>
+            </section>
+        </main>
+        <aside class="right-container">
+            <div class="right__title">
+                <h1>Registro Prévio:</h1>
+            </div>
+            <div class="right__list">
+                <ul class="right__ul"></ul>
+            </div>
+        </aside>
+        <footer class="web__footer">
+            <p>&copy; 2026 Logitech KeyControl. Todos os direitos reservados a Joknean Sousa.</p>
+        </footer>
+    </div>
+</body>
+
+</html>

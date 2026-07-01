@@ -1,0 +1,57 @@
+main + section ~ section {
+    width: 100%;
+    padding-top: 130px;
+    padding-left: 15px;
+}
+
+main + section ~ section > .container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+main + section ~ section > .container h2  {
+    text-transform: capitalize;  
+}
+
+main + section ~ section > .container span {
+    color: var(--cor2);
+    text-transform: capitalize;
+    font-style: normal;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.projets-imagens {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+}
+
+main + section ~ section > .container button {
+    display: block;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--cor7);
+    color: var(--cor6);
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    transition: 0.3s ease-in-out;
+}
+
+main + section ~ section > .container button:hover {
+    color: var(--cor5);
+    cursor: pointer;
+}
+/*Responsividade*/
+@media (max-width: 850px) {
+    main + section ~ section > .container {
+        text-align: center;
+        align-items: center;
+    }
+}

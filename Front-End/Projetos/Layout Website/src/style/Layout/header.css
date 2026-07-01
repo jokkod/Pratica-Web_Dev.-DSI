@@ -1,0 +1,30 @@
+header {
+    width: 100%; 
+    max-width: 1300px;
+    background-color: var(--cor1);
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    padding-left: 30px ;
+    padding-bottom: 15px;
+}
+
+header img {
+    width: 85px;
+    padding-left: 30px;
+}
+
+nav ul {
+    display: flex;
+    padding-top: 10px;
+    gap: 33px;
+    justify-content: flex-end;
+    list-style: none;
+    text-align: center;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: var(--cor4);
+    text-transform: uppercase;
+}

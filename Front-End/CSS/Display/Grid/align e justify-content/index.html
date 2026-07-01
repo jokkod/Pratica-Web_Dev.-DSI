@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática Align e Justify Content</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: #f7f7f7;
+        }
+
+        .grid-container{
+            height: 800px;
+            padding: 15px 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            place-content: center;
+        }
+
+        .items{
+            background-color: #e7e7e7;
+            border: 3px solid #e7e7e7;
+            margin-top: 15px;
+            padding: 90px;
+            border-radius: 5px;
+        }
+
+        .comprar{
+            background-color: #a8f;
+            color: #111;
+            padding: 3px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="items">
+            <h2>Camisa</h2>
+            <p>R$ 39,00</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit recusandae soluta, debitis error voluptatem et exercitationem id sit deserunt fugiat voluptas, at libero tempore vel, inventore mollitia laborum quibusdam a.</p>
+            <a href="#" class="comprar">Comprar</a>
+        </div>
+        <div class="items">
+            <h2>Camisa</h2>
+            <p>R$ 39,00</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit recusandae soluta, debitis error voluptatem et exercitationem id sit deserunt fugiat voluptas, at libero tempore vel, inventore mollitia laborum quibusdam a.</p>
+            <a href="#" class="comprar">Comprar</a>
+        </div>
+        <div class="items">
+            <h2>Camisa</h2>
+            <p>R$ 39,00</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit recusandae soluta, debitis error voluptatem et exercitationem id sit deserunt fugiat voluptas, at libero tempore vel, inventore mollitia laborum quibusdam a.</p>
+            <a href="#" class="comprar">Comprar</a>
+        </div>
+        <div class="items">
+            <h2>Camisa</h2>
+            <p>R$ 39,00</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit recusandae soluta, debitis error voluptatem et exercitationem id sit deserunt fugiat voluptas, at libero tempore vel, inventore mollitia laborum quibusdam a.</p>
+            <a href="#" class="comprar">Comprar</a>
+        </div>
+        <div class="items">
+            <h2>Camisa</h2>
+            <p>R$ 39,00</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit recusandae soluta, debitis error voluptatem et exercitationem id sit deserunt fugiat voluptas, at libero tempore vel, inventore mollitia laborum quibusdam a.</p>
+            <a href="#" class="comprar">Comprar</a>
+        </div>
+        <div class="items">
+            <h2>Camisa</h2>
+            <p>R$ 39,00</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit recusandae soluta, debitis error voluptatem et exercitationem id sit deserunt fugiat voluptas, at libero tempore vel, inventore mollitia laborum quibusdam a.</p>
+            <a href="#" class="comprar">Comprar</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+header{
+    width: 100%;
+    background-color: var(--cor1);
+    padding-top: 30px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+    position: sticky;
+    top: 0;
+}
+
+header > .container{
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+nav ul{
+    display: flex;
+    justify-content: flex-end;
+    gap: 33px;
+    list-style: none;  
+}
+
+nav ul a{
+    font-weight: bold;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: var(--cor2);
+    transition: 0.3s ease-in-out;
+}
+
+nav ul :hover{
+    text-decoration: underline;
+}
+/*Responsividade*/
+@media (max-width: 850px) and (min-width: 344px){
+    nav ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

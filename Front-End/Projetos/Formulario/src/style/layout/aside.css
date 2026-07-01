@@ -1,0 +1,77 @@
+aside {
+    background-color: var(--cor3);
+    color: var(--cor4);
+    text-align: center;
+    padding: 40px;
+    border-radius: 16px 0px 0px 16px;
+}
+
+aside > .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    gap: 20px;
+}
+
+.left-conteudo h2 {
+    margin-bottom: 10px;
+}
+
+.left-conteudo span {
+    line-height: 24px;
+}
+
+aside > .container button {
+    white-space: nowrap;
+    margin-top: auto;
+    margin-bottom: 15px;
+    padding: 12px 60px;
+    align-self: center;
+    width: fit-content;
+    background: transparent;
+    border: 2px solid var(--cor4);
+    color: var(--cor4);
+    border-radius: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0,7s ease-in-out;
+}
+
+aside > .container button:hover {
+    color: var(--cor5);
+    cursor: pointer;
+}
+
+.extra-conteudo .small-text {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.extra-conteudo :hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 666px) {
+    aside {
+        padding: 2rem;
+        border-radius: 1rem 1rem 0 0;
+        height: auto;
+    }
+    aside > .container {
+        min-height: 40vh;
+        gap: 1.5rem;
+    }
+    aside > .container button {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        padding: 0.75rem 15%; 
+        width: auto;
+        max-width: 90%;
+        font-size: 0.7rem;
+    }
+    .extra-conteudo .small-text {
+        font-size: 0.8rem;
+        gap: 0.5rem;
+    }
+}

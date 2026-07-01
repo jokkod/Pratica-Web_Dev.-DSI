@@ -1,0 +1,16 @@
+/* Global.css */
+@import url('Layout/global.css');
+/* Header.css */
+@import url('Layout/header.css');
+/* Main.css */
+@import url('Layout/main.css');
+/* Gallery.css */
+@import url('Layout/gallery.css');
+/* Focus-Mission.css */
+@import url('Layout/focus-mission.css');
+/* Projects.css */
+@import url('Layout/projects.css');
+/* Certifications.css */
+@import url('Layout/certifications.css');
+/* Contact.css */
+@import url('Layout/contact.css');

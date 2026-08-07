@@ -64,6 +64,7 @@ async function deleteRegister(id) {
         const sql = `
         DELETE FROM pensamentos WHERE id = ?
         `;
+        // Fazer o controller do delete e puxar a rota pelo id
         const [dados] = await conect.query(sql, [id]);
         return dados;
     } catch (error) {

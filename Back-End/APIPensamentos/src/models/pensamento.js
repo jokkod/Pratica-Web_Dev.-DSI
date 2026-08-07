@@ -47,8 +47,11 @@ async function searchId(id) {
 async function editRegister(id, descricao, autoria) {
     try {
         const sql = `
-        UPDATE pensamento SET ? WHERE id = ?
+        UPDATE pensamentos SET ? WHERE id = ?
     `;
+
+    // Montar objeto que vai receber as variáveis de parametro 
+    // Fazer a condicional para escolher qual campo o user vai atualizar
         const [dados] = await conect.query(sql, [id, descricao, autoria]);
         return dados;
     } catch (error) {

@@ -42,14 +42,15 @@ class PensamentosController {
             // Verificando se o id é um número
             if(isNaN) {
                 return res.status(400).json({
-                    message: "Id precisa ser um número!"
+                    message: "Id inválido."
                 })
             }
+
             const findId = await modelThought.searchId(id);
             //Verificando se o id foi encontrado, ou seja, se ele existe
-            if(typeof id === "undefined") {
+            if(!findId) {
                 return res.status(404).json({
-                    message: "Id não encontrado!"
+                    message: "Id inexistente"
                 })
             }
             return res.status(200).json(findId);
@@ -57,6 +58,23 @@ class PensamentosController {
             console.error(error);
             let message = 'Erro interno no servidor.';
             return res.status(500).json({message});
+        }
+    }
+
+    static async editThought(req, res) {
+        try {
+            const {id} = req.params;
+            const {descricao, autoria} = req.body;
+            // Adicionar 
+            const thoughtEdit = await modelThought.editRegister(id, descricao, autoria);
+            return req.status(201).json({
+                message: 'Atualização realizada.',
+                thoughtEdit
+            })
+        } catch (error) {
+            console.error(error);
+            let message = `Erro interno no servidor`;
+            return req.status(500).json({message});
         }
     }
 }

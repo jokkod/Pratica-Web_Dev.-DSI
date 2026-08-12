@@ -46,13 +46,25 @@ async function searchId(id) {
 // Atualizando registro
 async function editRegister(id, descricao, autoria) {
     try {
+        // Montar objeto que vai receber as variáveis de parametro
+        // Fazer a condicional para escolher qual campo o user vai atualizar
+        const dadosAtualizar = {};
+
+        if (descricao !== undefined && descricao !== null && descricao !== "") {
+            dadosAtualizar.descricao = descricao;
+        }
+        if (autoria !== undefined && autoria !== null && autoria !== "") {
+            dadosAtualizar.autoria = autoria;
+        }
+
+        if (Object.keys(dadosAtualizar).length === 0) {
+            throw new error("Nenhum campo fornecido para edição.");
+        }
+
         const sql = `
         UPDATE pensamentos SET ? WHERE id = ?
     `;
-
-    // Montar objeto que vai receber as variáveis de parametro 
-    // Fazer a condicional para escolher qual campo o user vai atualizar
-        const [dados] = await conect.query(sql, [id, descricao, autoria]);
+        const [dados] = await conect.query(sql, [id, dadosAtualizar]);
         return dados;
     } catch (error) {
         console.error(error);

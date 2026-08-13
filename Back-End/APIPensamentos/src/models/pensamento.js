@@ -1,26 +1,29 @@
 import conect from "../config/database.js";
 
+
 // Trazendo os dados do banco
 async function findPensamentos() {
+
     try {
         const sql = `
-        SELECT * FROM pensamentos
+        SELECT * FROM thought
     `;
     const [dados] = await conect.query(sql);
     console.log(dados);
+    return dados;
     
     } catch (error) {
         console.error(error);
     }
 }
 
- findPensamentos();
+
  
  // registrando dados no banco
  async function createPensamentos(descricao, autoria) {
     try {
         const sql = `
-            INSERT INTO pensamentos (descricao, autoria)
+            INSERT INTO thought (descricao, autoria)
             VALUES (?, ?)
         `
         const [dados] = await conect.query(sql,[descricao, autoria]);
@@ -34,7 +37,7 @@ async function findPensamentos() {
 async function searchId(id) {
     try {
         const sql = `
-        SELECT * FROM pensamentos WHERE id = ?
+        SELECT * FROM thought WHERE id = ?
         `;
         const [dados] = await conect.query(sql, [id]);
         return dados[0];
@@ -62,9 +65,9 @@ async function editRegister(id, descricao, autoria) {
         }
 
         const sql = `
-        UPDATE pensamentos SET ? WHERE id = ?
+        UPDATE thought SET ? WHERE id = ?
     `;
-        const [dados] = await conect.query(sql, [id, objectDados]);
+        const [dados] = await conect.query(sql, [objectDados, id]);
         return dados;
     } catch (error) {
         console.error(error);
@@ -74,7 +77,7 @@ async function editRegister(id, descricao, autoria) {
 async function deleteRegister(id) {
     try {
         const sql = `
-        DELETE FROM pensamentos WHERE id = ?
+        DELETE FROM thought WHERE id = ?
         `;
         const [dados] = await conect.query(sql, [id]);
         return dados;

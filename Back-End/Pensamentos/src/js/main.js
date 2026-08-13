@@ -11,14 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
 
     const id = document.getElementById("pensamento-id").value;
-    const conteudo = document.getElementById("pensamento-conteudo").value;
+    const conteudo = document.getElementById("pensamento-descricao").value;
     const autoria = document.getElementById("pensamento-autoria").value;
 
     try {
       if (id) {
-        await api.editarPensamento({ id, conteudo, autoria });
+        await api.editarPensamento({id, descricao, autoria});
       } else {
-        await api.salvarPensamento({ conteudo, autoria });
+        await api.salvarPensamento({descricao, autoria});
       }
 
       ui.limparFormulario();

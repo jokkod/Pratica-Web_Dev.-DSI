@@ -1,9 +1,11 @@
 import modelThought from '../models/pensamento.js';
 
+
 class PensamentosController {
     // Criação de métodos estáticos (não necessitários de instanciação)
     static async listThought(req, res){
         try {
+            
             const ThoughtList = await modelThought.findPensamentos();
             return res.status(200).json(ThoughtList);
         } catch (error) {
@@ -67,7 +69,7 @@ class PensamentosController {
             const {descricao, autoria} = req.body;
             // Adicionar 
             const thoughtEdit = await modelThought.editRegister(id, descricao, autoria);
-            return req.status(201).json({
+            return res.status(201).json({
                 message: 'Atualização realizada.',
                 thoughtEdit
             })

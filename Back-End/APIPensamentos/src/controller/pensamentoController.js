@@ -77,6 +77,32 @@ class PensamentosController {
             return req.status(500).json({message});
         }
     }
+
+    static async deleteThought(req, res) {
+        try {
+            const {id} = req.params
+
+            if (isNaN(id)) {
+                return res.status(400).json({
+                    message: "Id inválido."
+                })
+            }
+
+            const delThought = await modelThought.deleteRegister(id)
+
+            if (delThought.affectedRows === 0) {
+                return res.status(404).json({
+                    message: "Id a ser deletado, não existe."
+                })
+            }
+
+            return res.status(200).json({ message: "Registro deletado." })
+        } catch (error) {
+            console.error(error)
+            let message = 'Erro interno no servidor'
+            return res.status(500).json({ message })
+        }
+    }
 }
 
 export default PensamentosController;

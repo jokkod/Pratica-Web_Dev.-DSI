@@ -48,23 +48,23 @@ async function editRegister(id, descricao, autoria) {
     try {
         // Montar objeto que vai receber as variáveis de parametro
         // Fazer a condicional para escolher qual campo o user vai atualizar
-        const dadosAtualizar = {};
+        const objectDados = {};
 
-        if (descricao !== undefined && descricao !== null && descricao !== "") {
-            dadosAtualizar.descricao = descricao;
+        if (descricao !== undefined) {
+            objectDados.descricao = descricao;
         }
-        if (autoria !== undefined && autoria !== null && autoria !== "") {
-            dadosAtualizar.autoria = autoria;
+        if (autoria !== undefined) {
+            objectDados.autoria = autoria;
         }
 
-        if (Object.keys(dadosAtualizar).length === 0) {
+        if (Object.keys(objectDados).length === 0) {
             throw new error("Nenhum campo fornecido para edição.");
         }
 
         const sql = `
         UPDATE pensamentos SET ? WHERE id = ?
     `;
-        const [dados] = await conect.query(sql, [id, dadosAtualizar]);
+        const [dados] = await conect.query(sql, [id, objectDados]);
         return dados;
     } catch (error) {
         console.error(error);
@@ -76,7 +76,6 @@ async function deleteRegister(id) {
         const sql = `
         DELETE FROM pensamentos WHERE id = ?
         `;
-        // Fazer o controller do delete e puxar a rota pelo id
         const [dados] = await conect.query(sql, [id]);
         return dados;
     } catch (error) {

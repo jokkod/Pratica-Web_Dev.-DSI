@@ -1,0 +1,21 @@
+{
+  "name": "03-apiautenticacao",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "tsx watch src/server.js"
+  },
+  "keywords": [],
+  "author": "jokkod",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mysql2": "^3.24.3"
+  },
+  "devDependencies": {
+    "tsx": "^4.23.13"
+  }
+}

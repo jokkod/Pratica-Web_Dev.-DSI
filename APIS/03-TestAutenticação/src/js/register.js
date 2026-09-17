@@ -10,7 +10,7 @@ async function manipularForm (event) {
     const nome = document.getElementById('nome').value;
     const email = document.getElementById('email').value;
     const senha = document.getElementById('password').value;
-    const confirmaSenha = document.getElementById('confirmPassword').value;
+    const confirmaSenha = document.getElementById('confirm_password').value;
 
     if(senha !== confirmaSenha) {
         alert('As senhas não correspondem.');

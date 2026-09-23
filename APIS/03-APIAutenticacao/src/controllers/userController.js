@@ -1,7 +1,9 @@
 import modelUsers from '../models/user.js';
-/* import bcrypt from 'bcrypt'; */
-/* import jwt from 'jsonwebtoken' */
-/* import dotenv from 'dotenv' */
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 class UserController {
     static async findUsers(req, res) {
@@ -16,46 +18,6 @@ class UserController {
         }
     }
 
-    // Necessita Complemento com fragmentos aula perdida
-
-    static async userLogin(req, res) {
-        try {
-            //var escrita entre {} permite incluir dados à um parâmetro da função async
-            const { email, senha } = req.body;
-
-            // Validação campos obrigatórios
-            if (!email || !senha) {
-                let message = 'Todos os campos devem ser preenchidos obrigatoriamente.';
-                res.status(400).json({ message });
-            }
-
-            const userExistence = await modelUsers.listUsersEmail(email);
-            if (!userExistence) {
-                let message = 'Email ou senha inválidos';
-                return res.status(400).json({ message });
-            }
-
-            const passwordCompare = await bcypt.compare(
-                senha,
-                userExistence.senha
-            )
-
-            if (!passwordCompare) {
-                let message = 'Email ou senha inválidos.';
-                return res.status(400).json({ message });
-            }
-
-            const token = jwt.sign({
-                id: userExistence.id,
-                senha: userExistence.email
-            });
-        } catch(error) {
-            console.error(error)
-            return res.status(500).json({
-                message: 'Erro de servidor!'
-            });
-        }
-    }
 
     static async userRegister(req, res) {
         try {
@@ -89,7 +51,7 @@ class UserController {
         }
     }
 
-    static async userlogin(req, res) {
+    static async userLogin(req, res) {
         try {
             const { email, senha } = req.body;
             if (!email || !senha) {
@@ -112,8 +74,8 @@ class UserController {
             const token = jwt.sign(
                 {
                     id: user.id,
-                    email: user.email
-                    //Payload - informações que serão armazenadas no token
+                    email: user.email,
+                    role: user.role 
                 },
                 process.env.JWT_SECRET,
                 {

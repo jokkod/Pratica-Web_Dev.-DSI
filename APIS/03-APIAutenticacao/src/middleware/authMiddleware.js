@@ -1,5 +1,7 @@
-/* import jws from 'jsonwebtoken'; */
-/* import dotenv from 'dotenv.config' */
+import jwt from 'jsonwebtoken'; 
+import dotenv from 'dotenv'; 
+
+dotenv.config();
 
 function authMiddleware (req, res, next){
 
@@ -13,7 +15,7 @@ function authMiddleware (req, res, next){
     try {
         const token = authorization.split(" ")[1];
         
-        const payload = jwd.verify(
+        const payload = jwt.verify(
             token, 
             process.env.JWT_SECRET
         )
@@ -27,3 +29,5 @@ function authMiddleware (req, res, next){
         })
     }
 }
+
+export default authMiddleware;

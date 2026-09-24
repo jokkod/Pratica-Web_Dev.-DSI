@@ -7,7 +7,7 @@
     "start": "tsx watch src/server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "jokkod",
   "license": "ISC",
   "description": "",
   "dependencies": {

@@ -1,6 +1,6 @@
 import app from "./api.js";
 
-const form = document.querySelector('form');
+const form = document.querySelector('.form');
 document.addEventListener('DOMContentLoaded', ()=> {
     form.addEventListener('submit', manipularForm)
 })
@@ -19,7 +19,7 @@ async function manipularForm (event) {
 
     try {
         await app.registerUser({ nome, email, senha});
-        alert('Usuário Cadastado com Sucesso!');
+        alert('Usuário Cadastrado com Sucesso!');
     } catch (error) {
         console.error(error);
         alert(`Erro ao Cadastrar usuário ${error.message}`);

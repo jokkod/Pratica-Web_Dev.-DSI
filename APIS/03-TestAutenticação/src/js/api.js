@@ -26,7 +26,7 @@ function httpHeader() {
     }
 }
 
-const url_base = "http://localhost:3333/users"
+const url_base = "http://localhost:3333/user"
 
 const app = {
     async listUser() {
@@ -37,7 +37,7 @@ const app = {
             });
 
             await verifyResponse(response);
-            return response.json;
+            return response.json();
         } catch (error) {
             console.error(error);
             throw error
@@ -48,11 +48,13 @@ const app = {
         try {
             const response = await fetch(`${url_base}/register`, {
                 method: "POST",
-                headers: httpHeader(),
+                headers: {
+                    "Content-Type": "application/json"
+                },
                 body: JSON.stringify(register)
             });
             await verifyResponse(response);
-            return response.json;
+            return response.json();
         } catch (error) {
             console.error(error);
             throw error
@@ -63,14 +65,31 @@ const app = {
         try {
             const response = await fetch(`${url_base}/auth/login`, {
                 method: "POST",
-                headers: httpHeader(),
+                headers: {
+                    "Content-Type": "application/json"
+                },
                 body: JSON.stringify(loginUser)
             });
 
-            await verifyResponse();
-            return response.json;
+            await verifyResponse(response);
+            return response.json();
         } catch (error) {
             console.error(error);
+            throw error
+        }
+    },
+
+    async findUserAuthenticator() {
+        try {
+            const response = await fetch(`${url_base}/auth`, {
+                method: "GET",
+                headers: headerAuth()
+            });
+
+            await verifyResponse(response);
+            return response.json()
+        } catch (error) {
+            console.error(error)
             throw error
         }
     }

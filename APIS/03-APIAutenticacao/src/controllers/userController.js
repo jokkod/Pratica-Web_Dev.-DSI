@@ -18,36 +18,32 @@ class UserController {
         }
     }
 
-
     static async userRegister(req, res) {
         try {
             const { nome, email, senha } = req.body;
             //Verificação campos obrigatórios
             if (!nome || !email || !senha) {
                 let message = 'Todos os campos são obrigatórios.'
-                return res.status(400).json({
-                    message: message
-                })
+                return res.status(400).json({ message })
             }
             //Verificando existência do email
-            const userEmail = await modelUsers.findUsersEMail(email)
+            const userEmail = await modelUsers.findUserEmail(email)
             if (userEmail) {
-                let message = 'Usuario já existe!'
+                let message = 'Usuário já existe!'
                 return res.status(400).json({ message })
             }
             //Criando hash para esconder a senha
             const hash = await bcrypt.hash(senha, 10)
 
             //Levando dados para o banco de dados
-            await modelUsers.userRegistry(nome, email, hash)
+            await modelUsers.registerUsers(nome, email, hash)
             let message = 'Usuário cadastrado com sucesso!'
             return res.status(201).json({ message })
 
         } catch (error) {
             console.error(error)
-            return res.status(500).json({
-                message: 'Erro de servidor!'
-            });
+            let message = 'Erro de servidor!'
+            return res.status(500).json({ message })
         }
     }
 

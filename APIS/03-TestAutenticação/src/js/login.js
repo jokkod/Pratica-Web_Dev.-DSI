@@ -1,6 +1,6 @@
 import app from "api.js"
 
-const form = document.querySelector('form');
+const form = document.querySelector('.form');
 document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', manipulaForm)
 })
@@ -10,6 +10,11 @@ async function manipulaForm(event) {
 
     const email = document.getElementById('email').value;
     const senha = document.getElementById('password').value;
+
+    if (!email || !senha) {
+        let message = 'Todos os campos são obrigatórios.'
+        return res.status(400).json({ message })
+    }
 
     try {
         const result = await app.loginUser({ email, senha });

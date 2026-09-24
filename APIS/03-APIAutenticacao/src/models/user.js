@@ -3,7 +3,7 @@ import conect from "../config/database.js";
 async function listUsers() {
     try {
         const sql = `
-        SELECT * FROM USERS;
+        SELECT * FROM users;
     `;
 
         const [dados] = await conect.query(sql);

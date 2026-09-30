@@ -14,7 +14,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({
     storage: storage
-    //ou nomear storage apenas
+    //ou nomear/declarar storage apenas
 })
 
 export default upload;

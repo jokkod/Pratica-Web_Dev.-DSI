@@ -28,3 +28,11 @@ async function manipulaForm(event) {
         alert(`Erro de login do usuário ${error.message}`);
     }
 }
+
+const photoImage = document.createElement("div");
+photoImage.classList.add = "userPhoto";
+photoImage.style.display = "none";
+photoImage.style.width = "5px";
+photoImage.style.height = "auto";
+
+const formContainer = document.querySelector("form");

@@ -116,7 +116,7 @@ class UserController {
                 return res.status(404).json({ message })
             }
 
-            return res.status(200).json({idUser})
+            return res.status(200).json({ idUser })
         } catch (error) {
             console.error(error);
             let message = 'Erro de servidor!';
@@ -142,7 +142,7 @@ class UserController {
 
             const { filename } = req.file;
             const imagem = `upload/${filename}`;
-            await modelUsers.updateImage(id, imagem);
+            await modelUsers.updateImage(imagem, id);
             return res.status(200).json({
                 mensage: 'Imagem atualizada com sucesso',
                 imagem

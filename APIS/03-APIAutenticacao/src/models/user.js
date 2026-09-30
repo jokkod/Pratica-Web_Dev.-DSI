@@ -52,7 +52,7 @@ async function findById(id) {
             SELECT * FROM users WHERE id = ?
         `;
         const [dados] = await conect.query(sql, [id]);
-        return dados;
+        return dados[0];
     } catch (error) {
         console.error(error);
         throw error;
@@ -65,7 +65,7 @@ async function updateImage(id, imagem) {
             UPDATE users SET imagem = ? WHERE id = ? 
             `;
 
-        const [dados] = await conect.query(sql, [id, imagem]);
+        const [dados] = await conect.query(sql, [imagem, id]);
         return dados;
     } catch (error) {
         console.error(error);

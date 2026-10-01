@@ -13,7 +13,7 @@ body {
     min-height: 100vh;
 }
 
-.form {
+.form-container {
     background-color: #17162e;
     padding: 35px 28px;
     border-radius: 32px;
@@ -24,19 +24,19 @@ body {
     text-align: center;
 }
 
-.form h2 {
+.form-container h2 {
     color: #ffffff;
     font-size: 22px;
     font-weight: 700;
     margin-bottom: 20px;
 }
 
-.form form>div {
+.form-container form>div {
     margin-bottom: 14px;
     text-align: left;
 }
 
-.form label {
+.form-container label {
     display: block;
     color: #8c8ea7;
     font-size: 11px;
@@ -44,7 +44,7 @@ body {
     padding-left: 12px;
 }
 
-.form input {
+.form-container input {
     width: 100%;
     height: 46px;
     padding: 0 20px;
@@ -57,12 +57,12 @@ body {
     transition: background 0.2s, box-shadow 0.2s;
 }
 
-.form input:focus {
+.form-container input:focus {
     background-color: #5c5e70;
     box-shadow: 0 0 0 2px rgba(255, 61, 113, 0.5);
 }
 
-.form button {
+.form-container button {
     width: 100%;
     height: 48px;
     background: #ff3b70;
@@ -77,15 +77,15 @@ body {
     transition: background 0.2s, transform 0.1s;
 }
 
-.form button:hover {
+.form-container button:hover {
     background: #e63061;
 }
 
-.form button:active {
+.form-container button:active {
     transform: scale(0.98);
 }
 
-.form>a {
+.form-container>a {
     display: inline-block;
     margin-top: 18px;
     color: #8c8ea7;
@@ -94,6 +94,6 @@ body {
     transition: color 0.2s;
 }
 
-.form>a:hover {
+.form-container>a:hover {
     color: #ffffff;
 }

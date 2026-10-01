@@ -142,7 +142,7 @@ class UserController {
 
             const { filename } = req.file;
             const imagem = `upload/${filename}`;
-            await modelUsers.updateImage(imagem, id);
+            await modelUsers.updateImage(id, imagem);
             return res.status(200).json({
                 mensage: 'Imagem atualizada com sucesso',
                 imagem

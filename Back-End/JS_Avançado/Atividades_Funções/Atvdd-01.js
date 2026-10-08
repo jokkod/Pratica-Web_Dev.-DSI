@@ -9,12 +9,12 @@ function calcTriang() {
         let base1 = Number(
             prompt(`
         Digite um valor para a medida da base:
-        `),
+        `)
         );
         let altura1 = Number(
             prompt(`
         Digite um valor para a medida da altura:
-        `),
+        `)
         );
 
         if (base1 === null || altura1 === null || base1 === "" || altura1 === "") break;
@@ -47,12 +47,12 @@ function calcRet() {
         let base2 = Number(
             prompt(`
         Digite um valor para a medida da base:
-        `),
+        `)
         );
         let altura2 = Number(
             prompt(`
         Digite um valor para a medida da altura:
-        `),
+        `)
         );
 
         if (base2 === null || altura2 === null || base2 === "" || altura2 === "") break;
@@ -84,7 +84,7 @@ function calcQuadr() {
         let lado = Number(
             prompt(`
         Digite um valor para a medida do lado:
-        `),
+        `)
         );
 
         if (lado === null || lado === "") break;
@@ -120,17 +120,17 @@ function calcTrap() {
         let baseM = Number(
             prompt(`
         Digite um valor para a medida da base maior:
-        `),
+        `)
         );
         let basem = Number(
             prompt(`
         Digite um valor para a medida da base menor:
-        `),
+        `)
         );
         let altura3 = Number(
             prompt(`
         Digite um valor para a medida da altura:
-        `),
+        `)
         );
 
         if (baseM === null || baseM === "" || basem === null || basem === "" || altura3 === null || altura3 === "") break;

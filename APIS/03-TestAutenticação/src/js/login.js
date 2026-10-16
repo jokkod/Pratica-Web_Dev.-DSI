@@ -1,35 +1,8 @@
 import app from "api.js"
 
 const form = document.querySelector('.login-form');
-document.addEventListener('DOMContentLoaded', async() => {
-    const emailContainer = document.querySelector(".email-container");
-    const photoImage = document.createElement("div");
-
-    photoImage.classList.add("userPhoto");
-    photoImage.style.display = "block";
-    photoImage.style.width = "80px";
-    photoImage.style.height = "80px";
-    photoImage.style.margin = "0 auto 15px 0"
-    photoImage.style.backgroundSize = "cover"
-    photoImage.style.borderRadius = "20px";
-    photoImage.style.backgroundColor = "#8c8ea7";
-    form.appendChild = "photoImage";
-
-    if(emailContainer && form) {
-        form.insertBefore(photoImage, emailContainer);
-    }
-
-    try {
-        const userImage = await app.UserImageUpdate();
-
-        if(userImage) {
-            photoImage.style.backgroundImage = `url('${userImage}')`;
-        }
-    } catch (error) {
-        console.error(error);
-        alert(`Erro de carregamento da imagem ${error.message}`);
-    }
-    form.addEventListener('submit', manipulaForm)
+document.addEventListener('DOMContentLoaded', () => {
+    form.addEventListener ('submit', manipulaForm)
 })
 
 async function manipulaForm(event) {
@@ -52,6 +25,12 @@ async function manipulaForm(event) {
         window.location.href = "src/pages/dashboard.html"
     } catch (error) {
         console.error(error);
-        alert(`Erro de login do usuário ${error.message}`);
+        alert(`Erro ao fazer login do usuário ${error.message}`);
     }
 }
+
+const buttonLogOut = document.getElementById('botao-logout');
+buttonLogOut.addEventListener('click', () => {
+    localStorage.removeItem("token");
+    window.location.href = "../../index.html"
+})

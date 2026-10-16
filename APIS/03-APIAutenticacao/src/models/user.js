@@ -59,6 +59,7 @@ async function findById(id) {
     }
 }
 
+//Mudança não Assertiva
 async function updateImage(id, imagem) {
     try {
         const sql = `
